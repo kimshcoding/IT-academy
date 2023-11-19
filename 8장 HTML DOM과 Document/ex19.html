@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>dom 구조를 활용한 javascript 요소 찾기 예제2</title>
+	<style>
+		div {
+			margin-top: 5px;
+		}
+	</style>
+	<script>
+		function changeColor() {
+			let div = document.getElementsByTagName("div")[0];
+			let currentColor = div.style.color;
+			/*
+			if( currentColor == 'red'){
+				div.style.color = "black";
+			}else{
+				div.style.color = 'red';
+			}
+			*/
+			if (div.style.color == "black" || div.style.color == "") {
+				div.style.color = "red";
+			} else {
+				div.style.color = "black";
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<h2>예제2</h2>
+	-아래 버튼을 클릭하면 div 안에 텍스트 색상을 검은색인 경우 빨간색으로 빨간색인 경우 검은색으로 변경하세요
+	<br>
+	</br>
+	<button onclick="changeColor()">click</button>
+	<div>
+		이 텍스트 색상을 검정색과 빨간색을 번갈아가면서 바꾸시면 됩니다.
+	</div>
+</body>
+
+</html>

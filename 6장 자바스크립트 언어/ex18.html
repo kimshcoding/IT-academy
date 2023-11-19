@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비교 연산자</title>
+</head>
+
+<body>
+    <script>
+        //비교 연산자 (이항연산자)
+        //결과 값은 항상 true 또는 false
+
+        //1.크기 비교 (피연산자1과 2의 수 크기 비교, 정수와 실수의 크기비교 연산)
+        let a = 10;
+        let b = 15;
+
+        console.log(a < b);
+
+        a += 6; //16
+        console.log(a < b); //false
+
+        a--; //15
+        console.log(a <= b); //true
+        console.log(a > b); //false 
+        console.log(a >= b); //true
+
+        //2.동등 비교 (피연산자1과 2가 같은지 다른지 비교)
+        // 
+        //1) == : 값이 같은지에 대한 연산자 (같으면 true, 다르면 false) 
+        //        타입이 달라도 값이 같다면 true 반환
+
+        a = 'a';
+        b = 'a';
+        console.log(a == b); //true
+
+        a = 5;
+        b = '5';
+        console.log(a == b); //true
+
+        //2) === : 값과 타입이 전부 같은지 비교 연산자(값, 타입이 같으면 true)
+
+        console.log(a === b); //false
+
+        //3) != : 값이 다른지 비교 연산자 (값이 다르면 ture, 같으면 false)
+
+        a = 'a';
+        b = 'b';
+        console.log(a != b); //true
+
+        let value = ' ';
+        let result = value != ' '; //value의 값이 빈문자열이 아니면 true
+
+        a = 5;
+        b = '5';
+        console.log(a != b); //false
+
+        //4) !== : 값과 타입이 같지 않은지 비교 연산자 (값 또는 타입이 다르면 true)
+
+        console.log(a !== b); //true
+    </script>
+</body>
+
+</html>

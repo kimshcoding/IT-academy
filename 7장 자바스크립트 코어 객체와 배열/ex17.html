@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>문자열 분할</title>
+</head>
+
+<body>
+    <h2>문자열 분할</h2>
+    <hr>
+    <script>
+        // prompt() 함수를 사용하여 사용자로부터 문자열 입력 받기
+        let userInput = prompt("문자열을 입력하세요.");
+
+        // 사용자 입력 문자열을 "&" 문자를 기준으로 분할
+        let stringArray = userInput.split("&");
+
+        // 사용자 입력 문자열을 "&" 문자를 기준으로 출력
+        for (let i = 0; i < stringArray.length; i++) {
+            document.write(stringArray[i] + "<br>");
+        }
+    
+    </script>
+</body>
+
+</html>

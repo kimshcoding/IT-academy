@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>이벤트 기본 행위 취소</title>
+</head>
+
+<body>
+    <a href="http://www.naver.com">네이버로 이동</a>
+    <a href="http://www.google.com">구글로 이동</a>
+    <script>
+        //이벤트는 호출되는 타겟에 따라 기본행위가 존재한다.
+        //이때, 자바스크립트를 사용하여 기본행위를 취소할 수 있다.
+
+        //1.return false 사용하여 취소하기
+        let a = document.getElementsByTagName("a")[0];
+        a.onclick = function () {
+            return false;
+        }
+
+        //2. event 객체의 preventDefault() 호출
+        let a2 = document.getElementsByTagName("a")[1];
+        a2.onclick = function (e) {
+            e.preventDefault();
+        }
+
+    </script>
+    <form action="ex01.html" method="get" name="frm">
+        text : <input type="text" name="text"><br>
+        password : <input type="password" name="password"><br>
+        phone : <input type="text" name="phone"><br>
+        <button type="submit" onclick="validation();return false;">전송</button>
+    </form>
+
+    <script>
+        /*
+        전송 버튼 클릭시 
+        text 숫자만 입력된 경우
+        password 5자리 이상인 경우
+        phone 13자리인 경우
+    
+        */
+        function validation() {
+            let textVal = document.frm.text.value;
+            let reg = /[^0-9]/g; //숫자가 아닌 문자가 있을 경우 true
+            /*
+            parseInt(문자열) : 문자열 앞에 숫자가 있으면 해당 문자열숫자만 숫자로 변환
+            */
+            let isSubmit = true;
+
+            if (reg.test(textVal)) { //text의 값에 문자가 포함된 경우
+                isSubmit = false;
+            }
+            let pass = document.frm.password.value;
+            if (pass.length < 5) { //password 값이 5자리 미만인 경우
+                isSubmit = false;
+            }
+
+            let phone = document.frm.phone.value;
+            if (phone.length != 13) {
+                isSubmit = false;
+            }
+
+            if (isSubmit) {
+                document.frm.submit();
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>버튼 만드는 태크</title>
+</head>
+<body>
+    <h1>버튼 만들기</h1>
+    <!--
+        버튼을 만드는 태그
+        1. input 태그
+        2. button 태그
+    -->
+    <hr>
+    <h2>일반버튼 만들기</h2>
+    input 태그 사용 <br>
+
+<!--
+    input 태그를 사용하여 일반 버튼 생성하는 방법
+    1. type 속성은 button
+    2. value 속성은 버틍의 텍스트
+    3. 일반 버튼은 제공만 될 뿐 이벤트 발생시 아무런 효과도 발생하지 않는다.
+    (자바스크립트 사용)
+-->
+
+    <input type="button" value="버튼1" onclick="alert('짠!')">
+    <br>
+    button 태크 사용 <br>
+
+<!--
+    button 태크를 사용하여 일반 버튼 생성하는 방법
+    1. button 태그의 type 속성은 button (생략가능)
+    2. 시작태크 종료태그 사이의 텍스트가 버튼 이름이 된다.
+-->
+    <button type="button">버튼2</button>
+
+    <h2>이미지 버튼 만들기</h2>
+    <!--input 태크를 사용하여 이미지 버튼 만들기-->
+    <input type="image" src="1.png" width="50" height="50" onclick="alert('짠!')">
+
+    <!--button 태그를 사용하여 이미지 버튼 만들기-->
+    <button onclick="alert('짠!')"><img src="1.png" width="50" height="50"></button>
+    <hr>
+    <h2>초기화 버튼 만들기</h2>
+    <form>
+       <input type="text">
+       <br>
+       <input type="text" value="초기값">
+       <br>
+       <!--
+        input 태그 사용하여 초기화 버튼 만들기
+        * value 속성 생략 시 '초기화'라는 버튼 명을 제공함(변경하능)
+       -->
+       <input type="reset" value="리셋">
+       <!--
+        button 태그를 사용하여 초기화 버큰 만들기
+        * 시작 태그 종료 태그 사이 버튼명을 생략하면 출력되지 않는다.
+       -->
+       <button type="reset">초기화</button>
+    </form>
+    <hr>
+    <h2>제출 버튼 만들기</h2>
+    <form> <!--method="get" action="현재페이지"-->
+        <input type="text" name="t1">
+        <br>
+        <!--
+            input type="submit" 태그로 만들기
+            * value 속성 생략시 기본 버튼 명은 제출 (변겨아능)
+            * 클릭시 form에 정의 되어 있는 method 방식으로 action 경로로
+            입력한 양식 데이터를 전송한다. (입력양식의 name 속성은 key 입력값은 value)
+        -->
+       <input type="submit" value="로그인">
+       <!--
+         button 태그로 만들기
+         button 태그는 부모에 form이 있다면 type 생략시 기본 submit 버튼이 된다.
+       -->
+       <button>회원가입</button>
+    </form>
+
+<!--
+    버튼 종류 세가지
+    1. 일반버튼 - 제출, 초기화를 하지 않는 버튼은 전부 일반 버튼
+    2. 제출버튼 - 클릭시 form 태그 안의 양식 데이터를 전송
+    3. 초기화 버튼 - 클릭시 form 태그 안의 양식 데이터를 초기화
+-->
+<form method="get" action="ex05.html">
+    <input type="text" name="t1">
+    <br>
+    <button>클릭시 메세지창 출력</button>
+    <button>클릭시 데이터 전송</button>
+</form>
+
+</body>
+</html>

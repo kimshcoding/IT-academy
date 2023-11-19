@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>홀짝 과제</title>
+</head>
+
+<body>
+    <!--
+        숫자 1~20까지를 출력합니다.
+        이때 홀수 옆에는 1(홀수) 방식으로 출력
+        짝수 옆에는 2(짝수) 방식으로 출력합니다.
+
+        실행예)
+        1(홀수) 2(짝수) 3(홀수) 4(짝수) ...
+    -->
+
+    <script>
+        for (let num = 1; num <= 20; num++) {
+            if (num % 2 == 0) {
+                document.write(num + "(짝수)");
+            } else {
+                document.write(num + "(홀수)");
+            }
+            document.write('<br>');
+        }
+    </script>
+</body>
+
+</html>

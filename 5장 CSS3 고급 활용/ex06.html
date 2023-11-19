@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box1{
+            position: relative;
+            width: 300px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: yellow;
+        }
+        #absBox{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            margin-left: 100px;
+            margin-top: 200px;
+            position: relative;
+        }#absBox>div{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="absBox">
+        <div id="box1">abs1</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>실습문제 8</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 150px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>16개의 랜덤한 색 만들기</h3>
+    <hr>
+    <script>
+        //1.div 16개 만들기
+        for (let i = 1; i <= 16; i++) {
+            //2.div 16개 출력하면서 각각 r,g,b 색상 랜덤하게 3개 만들기
+            let r = Math.floor(Math.random() * 257); //0~256.9999999999999999999 -> 0~256까지 랜덤으로 출력됨
+            let g = Math.floor(Math.random() * 257);
+            let b = Math.floor(Math.random() * 257);
+
+            //3.랜덤으로 발생한 r,g,b 색상을 그려지는 div 스타일 속성으로 대입 후 화면에 출력함
+            document.write("<div style='background-color:rgb(" + r + "," + g + "," + b + ")'>rgb(" + r + "," + g + "," + b + ")</div>");
+        }
+    </script>
+</body>
+
+</html>

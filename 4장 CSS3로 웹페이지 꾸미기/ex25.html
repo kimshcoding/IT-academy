@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #d1,#d2,#d3{
+            width: 700px;
+            height: 700px;
+            border: 1px solid black;
+        }
+        #d2{
+            background-image: url(spade-7.png);
+            background-size: 700px 700px;
+        }
+        #d3{
+            /*
+            background-image: url(spade-7.png);
+            background-size: 200px;
+            background-repeat: repeat-y;
+            background-position: center center;
+            background-color: skyblue;
+            */
+            /* 단축형 입력 순서: color url position/size repeat */
+            background: skyblue url(spade-7.png) center center/200px repeat-y;
+        }
+        #s1{
+            /*
+            1번 수치 : x축 오른쪽으로 얼마나 이동할건지
+            2번 수치 : y축 아래로 얼마나 이동할건지
+            3번 수치 : 그림자 번짐 수치
+            4번 수치 : 그림자 색상
+            */
+            text-shadow: 20px 5px 1px red;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1"><img src="spade-7.png" width="700" height="700"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <span id="s1">sample text</span>
+    <br>
+    <a href="#" style="cursor: default">클릭</a>
+</body>
+</html>

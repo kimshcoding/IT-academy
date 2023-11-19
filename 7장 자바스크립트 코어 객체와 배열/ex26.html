@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>프로토타입</title>
+</head>
+
+<body>
+    <h3>book 객체 만들기</h3>
+    <hr>
+    <script>
+        // book 객체를 프로토타입으로 생성, 프로퍼티 3개 구성 및 초기화
+        function book (title, author, price){
+            this.title = title;
+            this.author = author;
+            this.price = price;
+        }
+
+        // new 연산자 이용하여 객체 생성
+        let book1 = new book("HTML5", "황기태", 20000);
+        
+        // 각 객체 출력
+        document.write("book: " + book1.title + ", " + book1.author + ", " + book1.price);
+    </script>
+
+</body>
+
+</html>

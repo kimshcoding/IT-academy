@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>dom 구조를 활용한 javascript 요소 찾기 예제4</title>
+    <style>
+        .result {
+            border: 1px solid black;
+            margin: 5px 0px;
+        }
+    </style>
+    <script>
+        function copyBtn() {
+            let value = document.getElementById("here").value;
+            /*
+            document.getElementsByClassName("result")[0].innerHTML 
+                                                                                                    += "<div>"+value+"</div>";
+                                                                                                    */
+            let newDiv = document.createElement("div");
+            newDiv.innerHTML = value;
+
+            let parent = document.getElementsByClassName("result")[0];
+            parent.appendChild(newDiv);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>예제4</h2>
+    -아래 버튼을 클릭할 때마다 id="here"인 태그 안의 텍스트를 class="result" 태그 안에 아래쪽으로 계속 추가 삽입해주세요.
+    <br>
+    </br>
+    <button onclick="copyBtn()">click</button>
+    <input type="text" id="here">
+    <div class="result">
+
+    </div>
+</body>
+
+</html>

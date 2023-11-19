@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for(let num=1; num <= 10; num++){
+            if(num % 2 == 1){  //홀수 
+                console.log(num);
+            }
+        }
+        /*
+        continue 문 : 반복을 건너뛰고 다음 반복으로 넘어갈 때 사용하는 보조제어문
+        */
+
+        for(let num=1; num <= 10; num++){
+            if(num % 2 != 1){ //홀수   2로 나눈 나머지가 1이 아니라면
+                continue;     //다음 반복으로 점프하라
+            }
+            console.log(num);
+        }
+    </script>
+</body>
+</html>

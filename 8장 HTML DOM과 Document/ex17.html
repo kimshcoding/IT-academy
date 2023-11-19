@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>문서의 동적제어</title>
+    <style>
+        #wrap>div {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        function addDiv1() {
+            document.getElementById("wrap").innerHTML += "<div></div>"
+        }
+        //or
+        function addDiv2() {
+            //document 객체를 사용하여 DOM 객체를 생성하여 화면에 출력하기
+
+            let div = document.createElement("div"); //DOM 객체 생성
+
+            let parent = document.getElementById("wrap"); //요소를 추가할 부모객체
+
+            parent.appendChild(div); //부모의 마지막 자식으로 생성된 객체 추가
+        }
+
+        function addDiv3() {
+            let div = document.createElement("div"); //1.객체 생성
+            div.innerHTML = '앞으로 추가'; // 2. 객체 제어
+
+            let parent = document.getElementById("wrap"); //3.부모 지정
+
+            parent.prepend(div); //4. 부모의 첫번째 자식으로 추가
+        }
+
+        function addDiv4() {
+            let input = document.createElement("input"); //1.DOM 객체 생성
+            input.setAttribute("type", "text");
+
+            let parent = document.getElementById("result");
+            parent.appendChild(input);
+        }
+
+        function rmDiv() {
+            //1. 제거하고자하는 DOM 객체를 찾는다.
+            //2. 제거하고자하는 DOM 객체의 부모를 찾는다.
+            //3. 찾은 부모에서 제거 대상 DOM 객체를 자식으로 삭제한다.
+
+            let rmTarget = document.getElementById("removeTarget");
+            let parent = document.getElementById("wrap");
+            parent.removeChild(rmTarget);
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <button onclick="addDiv1()">add1</button>
+    <button onclick="addDiv2()">add2</button>
+    <button onclick="addDiv3()">add3</button>
+    <button onclick="rmDiv()">remove</button>
+    <div id="wrap">
+        <div id="removeTarget">removeTarget</div>
+    </div>
+    <!--
+        add 버튼 클릭 시 id wrap 요소의 마지막 자식으로 <div></div>가 계속 추가
+    -->
+
+    <button onclick="addDiv4()">텍스트입력양식 추가</button>
+    <div id="result">
+
+
+    </div>
+    <!--
+            위 '텍스트입력양식 추가' 버튼 클릭시
+            <input type="text"> 요소를 생성하여 id result 요소의 마지막 자식으로 계속 추가하세요
+        -->
+
+</body>
+
+</html>

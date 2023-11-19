@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>switch문</title>
+</head>
+
+<body>
+    <script>
+        //switch문 : 식의 값을 비교하여 실행문을 제어하는 구문이다.
+        /*
+        문법)
+
+        switch(식){
+            case 값:
+                실행문;
+                break;  //해당 케이스의 실행문 끝에 반드시 필요한 보조 제어문
+            case 값:
+                실행문;
+                break;
+            case 값:
+                실행문;
+                break;
+            case 값:
+                실행문;
+                break;
+            case 값:
+                실행문;
+                break;
+            default;   //식의 값이 위 케이스가 전부 아닌 경우 실행
+                실행문;
+        }
+        */
+
+
+        let text = 'C';
+
+        switch (text) {
+            case 'A':
+                console.log("아주 잘하셨어요!!");
+                break;
+            case 'B':
+                console.log("잘하셨어요!!");
+                break;
+            case 'C':
+                console.log("조금 노력하세요!!");
+                break;
+            case 'D':
+                console.log("조금 더 노력하세요!!");
+                break;
+            default:
+                console.log("아주 노력하세요!!");
+        }
+
+
+
+        let score = 'E';
+
+        switch (score) {
+            case 'A':
+                console.log("A학점 : 100 ~ 90 사이입니다");
+                break;
+            case 'B':
+                console.log("B학점 : 89 ~ 80 사이입니다");
+                break;
+            case 'C':
+                console.log("C학점 : 79 ~ 70 사이입니다");
+                break;
+            case 'D':
+                console.log("D학점 : 69 ~ 60 사이입니다");
+                break;
+            default:
+                console.log("59 이하입니다");
+        }
+        //switch case 문을 사용하여 학점에 대한 점수 범위를 안내하세요.
+        //A학점 : 100 ~ 90 사이입니다 출력
+        //B학점 : 89 ~ 80 사이입니다 출력
+        //C학점 : 79 ~ 70 사이입니다 출력
+        //D학점 : 69 ~ 60 사이입니다 출력
+        //그 외 학점 : 59 이하입니다 출력
+
+
+        let code = '004';
+
+        switch (code) {
+            case '001':
+                console.log("서울");
+                break;
+            case '002':
+                console.log("경기");
+                break;
+            case '003':
+                console.log("대전");
+                break;
+            case '004':
+                console.log("전주");
+                break;
+            default:
+                console.log("알수 없습니다");
+        }
+        //code에 대한 한글 값을 출력하세요
+        //001 : 서울
+        //002 : 경기
+        //003 : 대전
+        //004 : 전주
+        //그외 : 알수 없습니다
+
+
+        code = '004';
+
+        switch (code) {
+            case '001':
+            case '002':
+            case '003':
+                console.log("서울");
+                break;
+            case '004':
+            case '005':
+                console.log("경기");
+                break;
+            case '006':
+            case '007':
+                console.log("대전");
+                break;
+            case '008':
+                console.log("전주");
+                break;
+            default:
+                console.log("알수 없다.");
+
+        }
+        //001,002,003 : 서울
+        //004,005     : 경기
+        //006,007     : 대전
+        //008         : 전주
+        //그외         : 알수 없다.
+
+    </script>
+</body>
+
+</html>

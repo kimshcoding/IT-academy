@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>if문</title>
+</head>
+<body>
+    <script>
+        //제어문 : 위에서 아래로 순차적으로 실행되는 소스코드에서
+        //         개발자가 원하는 흐름을 만들어 내기 위한 실행문이다.
+
+        //1.if문 : 조건을 비교하여 조건이 참인 경우 실행할 실행문을 다루는 제어문
+
+        let flag = false;
+        let name = "홍";
+
+        if(flag == true){ //if문 구문
+            //if문의 조건이 참인 경우 실행되는 영역
+           console.log(name); //flag가 true인 경우에 출력
+        }
+
+        function checkText(){
+            if(document.frm.t1.value !=''){
+               document.frm.submit();
+            }
+        }
+
+        let num = 77;
+        //num의 값이 80보다 큰 경우 '80 초과 입니다' 출력
+        if(num > 80){
+            console.log("80 초과 입니다");
+        }else{
+        //num의 값이 80보다 작거나 같은 경우 '80 이하입니다.' 출력
+            console.log("80 이하 입니다");
+        }
+        
+        let age = 22;
+        let gender = 'F';
+        name = '영숙';
+
+        //영숙이가 성인 남성이면 '성인 남성입니다' 출력
+        //영숙이가 성인 여성이면 '성인 여성입니다' 출력
+        // 성인 기준 : age가 18보다 큰 경우
+        // 성별 기준 : gender가 'F'이면, 여성 'M'이면 남성
+
+        if(age>18){
+            if(gender=='M'){
+                console.log('성인 남성입니다');
+            }else{
+                console.log('성인 여성입니다');
+            }
+        }
+
+        if(age > 18 && gender=='M'){
+            console.log('성인 남성입니다');
+        }
+        if(age > 18 && gender=='F'){
+            console.log('성인 여성입니다');
+        }
+        
+/*----------------------------------------------------------------------------------------------------------*/
+        // if문 구문 (단독 사용 가능)
+        /*
+        실행문1
+        if(조건식){
+            //조건식의 결과가 참인 경우 실행할 실행문들 위치
+            실행문2
+            실행문3
+        }
+        실행문4
+
+        조건식 참인 경우: 싱행문1 -> 실행문2 -> 실행문3 -> 실행문4
+        조건식 거짓인 경우: 실행문1 -> 실행문4
+        */
+
+        let val = 17;
+
+        //val변수 안의 값이 15보다 큰 경우 '15초과입니다.' 출력
+        if(val > 15){
+            console.log(val + '의 값은 15초과입니다.');
+        }
+        
+        let id = 'tester';
+        name = "홍길동";
+        let addr = "전주 덕진구";
+        let phone = "010-1111-1111";
+
+        //id가 'tester'인 경우 콘솔에 name,addr,phone의 값을 각각 출력하세요.
+        if(id == 'tester'){
+            console.log(name);
+            console.log(addr);
+            console.log(phone);
+        }
+
+        id = 'tester1';
+        let password = "1234";
+        name = "김길동"
+        addr = "전주 완산구";
+        phone = "010-1111-2222";
+
+        //id가 'tester1'이고 패스워드가 '1234'인 경우
+        // name, addr, phone 변수의 값을 출력하세요.
+
+        if(id == 'tester1' && password == "1234"){
+            console.log(name);
+            console.log(addr);
+            console.log(phone);
+        }
+
+        //------------------------------------------------------------------------------------------
+        /*
+        else문 구문 (단독 사용 불가능, 반드시 if가 있어야 한다.)
+        
+        실행문1
+        if(조건식){
+            실행문2
+            실행문3
+        }else{
+            //if의 조건식이 거짓이면 실행되는 블록이다.
+            //if의 조건식이 참인 경우 else 블록은 절대로 실행되지 않는다.
+
+            실행문4
+            실행문5
+        }
+        실행문6
+
+        if 조건이 참인 경우 : 실행문1 -> 실행문2 -> 실행문3 -> 실행문6
+        if 조건이 거짓인 경우 : 실행문1 -> 실행문4 -> 실행문5 -> 실행문6 
+        */
+
+
+        num = 15;
+
+        //num이 20보다 작은 경우는 '20보다 작습니다.' 출력
+        //num이 20보다 크거나 같은 경우 '20보다 크거나 같습니다' 출력
+
+        if(num < 20){
+            console.log('20보다 작습니다.');
+        }else{
+            console.log('20보다 크거나 같습니다');
+        }
+
+        name = "박길동";
+        age = 22;
+
+        //박길동씨가 65세 이상이면 '경로우대자 입니다.' 출력
+        // 65세 미만이면 '경로우대 대상이 아닙니다' 출력
+
+        if(name >= 65){
+            console.log('경로우대자 입니다.');
+        }else{
+            console.log('경로우대 대상이 아닙니다');
+        }
+
+
+        //프롬프트 다루기
+        id = prompt('아이디를 입력하세요.');
+        document.write(id);
+
+
+
+
+
+    </script>
+    <form action="" method="">
+        <input type="text" name="t1" required>
+        <button onclick="checkText(); return false;">전송</button>
+    </form>
+</body>
+</html>

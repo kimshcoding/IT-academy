@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box{
+            position: relative;
+            height: 200px;
+        }
+        #box>div:nth-child(1){
+            position: absolute;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        #box>div:nth-child(2){
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position: absolute;
+            left: 30px;
+            top: 5px;
+            z-index: 10;
+        }
+        #box>div:nth-child(3){
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            position: absolute;
+            left: 40px;
+            top: 10px;
+            z-index: 15;
+        }
+        #box>div:nth-child(4){
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            left: 50px;
+            top: 15px;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body>
+    <h2>z-index 실습하기</h2>
+        <div id="box">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>    
+</body>
+</html>

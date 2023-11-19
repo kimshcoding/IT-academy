@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>함수란</title>
+</head>
+
+<body>
+    <script>
+        /*
+        함수 : 기능이라는 의미를 내포하고 있음. 
+                특정 목적이 있는 여러 실행문들의 블록이다.
+                여러번 호출되어 매번 똑같은 기능을 실행할 수 있다.
+                기능 동작에 필요한 값을 외부에서 호출 시 전달할 수 있다.
+                기능을 통해 도출된 결과값을 반환(호출된 곳으로 값을 돌려준다.)할 수 있다.
+                웹페이지에서 이벤트와 함께 사용됨.
+
+        문법)
+        function 함수명([매개변수1, 매개변수2, ...]){
+            기능에 대한 실행문들을 나열
+            return 반환값;
+        }
+        */
+
+        function print() {  //print라는 이름의 함수 선언
+            document.write("javascript print 함수가 호출되면 매번 출력됩니다.");
+
+        }
+        print(); // print라는 이름의 함수 실행
+        print();
+        print();
+        print();
+        print();
+
+        //1.이름이 있는 함수로 정의
+        function fn() {
+            console.log("실행문1");
+            console.log("실행문2");
+            console.log("실행문3");
+        }
+        fn();
+
+        //2.이름이 없는 함수로 정의(무명함수)
+        //무명함수는 이름이 없기 때문에 반드시 변수에 담아 변수의 이름으로 호출한다.
+        let fn2 = function () {
+            console.log("실행문1");
+            console.log("실행문2");
+            console.log("실행문3");
+        }
+        fn2(); // 무명함수는 반드시 함수 선언 후에 사용하라!
+
+        //*함수 호출시 외부에서 값을 함수로 전달하는 경우
+        /*
+        -함수 호출시 외부에서 값을 전달하는 방법
+        함수이름([값1 ,값2, ...])
+        외부에서 전달하는 값 -> 매개값 or 인자값 (주로 데이터 리터럴 또는 변수다.)
+
+        -외부값을 내부로 전달 받는 방법
+        function 함수명 ([매개변수1, 매개변수2 ...]){}
+        위 매개변수를 통하여 전달 받는다
+
+        주의!
+        매개변수명은 자바스트립트 식별자를 따르며 변수 선언 키워드 생략
+        매개변수 선언 순서와 매개값 순서가 매핑되어 전달 받는다.
+        */
+
+        function sum(num1, num2) {
+            console.log(num1 + num2);
+
+        }
+        sum(1, 2); //sum 함수 호출시 sum함수로 1과2 총 두 개의 데이터를 보내겠다.
+        sum(3, 4); //7
+        sum('a', 'b'); //'ab'
+
+        let a = 10;
+        let b = 20;
+
+        sum(a, b); //30
+
+        function info(name, age) {
+            console.log(name);
+        }
+        info("홍길동", 20);
+
+        /*
+        -자바스크립트 함수 선언시 유의사항!
+        1. 함수명 중복되는 경우
+          *제일 나중에 선언된 함수의 우선순위가 높다.
+
+        */
+        function plus() {
+            console.log(1);
+            console.log(1 + 2);
+        }
+        function plus(num1) {
+            console.log(2);
+            console.log(num1 + 10);
+        }
+        function plus(num1, num2) {
+            console.log(3);
+            console.log(num1 + num2);
+        }
+
+        plus(); // 함수명이 중복 되었을 때, 제일 마지막 함수가 호출됨
+
+
+        /*
+        2.선언된 매개변수와 전달하는 매개값이 달라도 오류가 안난다.
+            -매개값 보다 매개변수가 많은 경우
+            : 순서대로 대입 후 넘치는 매개변수는 underfined 값을 갖는다.
+            - 매개값이 매개변수보다 많은 경우
+            : 순서대로 대입 후 넘치는 매개값을 버린다.
+        */
+
+        function print1(t1, t2, t3){
+            console.log(t1);
+            console.log(t2);
+            console.log(t3);
+        }
+        
+        print1();
+        print1(1);
+        print1(1,2,3,4,5,6,7);
+        
+
+        /*
+        return 키워드 : 함수의 실행결과를 함수를 호출한 곳으로 반환할 때 사용
+
+        문법)
+        function fn(){
+            return 반환값; // 반환값은 리터럴, 변수, 연산식 등이 올 수 있다.
+        }
+        */
+
+        function plus(num1, num2){
+            let sum = num1 + num2;
+            return sum;
+        }
+
+        let result = plus(1,2);
+        console.log(result);
+
+        function print(arg1){
+            return arg1 + "_fn"; //호출된 곳으로 _fn 더해서 출력함
+        }
+
+        console.log(print('javascript'));
+
+    </script>
+</body>
+
+</html>

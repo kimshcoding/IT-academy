@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title> 
+    <style>
+        h2, div{
+            color: blue;
+        }
+        .c1{
+            color: green;
+        }
+        #idTitle{
+            color: brown;
+        }
+        #idDate{
+            color: gray
+        }
+    </style>
+</head>
+<body>
+    <h1>셀럭터 배우기</h1>
+    <h2>태그 이름 및 그룹 셀렉터</h2>
+    <div>태그 이름으로 요소를 선택합니다.</div>
+    <div>콤마(,)를 사용하면 여러 셀렉터를 하나의 그룹으로 묶을 수 있다.</div>
+
+    <h2 class="c1">클래스 셀렉터</h2>
+    <div class="c1">클래스 속성 값이 같은 요소들을 하나로 묶어서 스타일 적용.</div>
+    <div class="c1">css에서 마침표(.)를 찍은 후 클래스값을 작성하여 셀렉터를
+        사용하면 클래서 속성값이 일치하는 요소들에 공통 스타일을 적용한다.
+    </div>
+<!-- id 는 여러개 중에 하나만 바꿀 때 사용함 -->
+    <h2 id="idTitle">아이디 셀렉터</h2>
+    <div id="idDate">아이디 속성 값이 같은 요소를 찾아 스타일 적용</div>
+    <div>기호는 #을 사용함.</div>
+</body>
+</html>

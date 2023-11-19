@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>이벤트 객체 다루기</title>
+</head>
+
+<body>
+    <div>div 입니다.</div>
+    <div>div 입니다.</div>
+    <div>div 입니다.</div>
+    <script>
+        //위에 모든 div를 각각 클릭했을 때 배경색을 노란색으로 변경하는 이벤트
+        //를 등록하세요. 이때 이벤트 함수는 backYellow를 사용합니다.
+
+
+        let divs = document.getElementsByTagName("div");
+
+        //이벤트 객체 사용x
+        var div;
+        function backYellow() {
+            div.style.backgroundColor = "yellow";
+        }
+
+        for (let i = 0; i < divs.length; i++) {
+            div = divs[i];
+            div.onclick = backYellow;
+        }
+
+        //이벤트 객체 사용o
+        /*
+        자바스크립트에서는 이벤트 리스너 외부 함수로 반드시
+        첫번째 매개값으로 해당 이벤트 객체를 전달한다.
+        */
+        function backYellow(eObj) {
+            eObj.target.style.backgroundColor = "yellow";
+        }
+
+        for (let i = 0; i < divs.length; i++) {
+            div = divs[i];
+            div.onclick = backYellow;
+        }
+    </script>
+</body>
+
+</html>

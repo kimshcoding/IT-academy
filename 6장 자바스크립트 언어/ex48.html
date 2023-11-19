@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>함수 실습</title>
+</head>
+
+<body>
+    <script>
+        /*
+        사용자에게 숫자1, 숫자2, 연산자(+,-,*,/,%) 데이터를 받습니다. 
+        함수 plus, minus, multi, divide, mod 5개를 선언하여
+
+        사용자가 연산자 +를 입력했을 경우 plus 함수를 호출하여 
+        입력값 숫자1과 숫자2의 합을 출력합니다.
+
+        사용자가 연산자 -를 입력했을 경우 minus 함수를 호출하여 
+        입력값 숫자1과 숫자2의 차를 출력합니다.
+
+        사용자가 연산자 *를 입력했을 경우 multi 함수를 호출하여 
+        입력값 숫자1과 숫자2의 곱을 출력합니다.
+
+        사용자가 연산자 /를 입력했을 경우 divide 함수를 호출하여 
+        입력값 숫자1과 숫자2의 나누기를 출력합니다.
+
+        사용자가 연산자 %를 입력했을 경우 mod 함수를 호출하여 
+        입력값 숫자1과 숫자2의 나머지를 출력합니다.
+        */
+
+        let num1 = prompt("숫자1을 입력하세요.");
+        let num2 = prompt("숫자2를 입력하세요.");
+        let oper = prompt("연산자를 입력하세요.");
+
+        function plus(n1, n2) {
+            return parseInt(n1) + parseInt(n2);
+        }
+
+        function minus(n1, n2) {
+            return n1 - n2;
+        }
+
+        function multi(n1, n2) {
+            return n1 * n2;
+        }
+
+        function divide(n1, n2) {
+            return n1 / n2;
+        }
+
+        function mod(n1, n2) {
+            return n1 % n2;
+        }
+
+        switch (oper) {
+            case '+':
+                document.write(plus(num1, num2));
+                break;
+            case '-':
+                document.write(minus(num1, num2));
+                break;
+            case '*':
+                document.write(multi(num1, num2));
+                break;
+            case '/':
+                document.write(divide(num1, num2));
+                break;
+            case '%':
+                document.write(mod(num1, num2));
+                break;
+            default:
+                document.write("잘못 입력했습니다.");
+        }
+
+    </script>
+</body>
+
+</html>

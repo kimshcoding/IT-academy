@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM this 사용하기 - 강사님</title>
+</head>
+
+<body>
+    <!-- 클릭 시 글자 크기가 커지는 span 요소 -->
+    <div id="d1">
+        <!-- span 요소의 스타일 속성 초기값 설정 -->
+        <span style="font-size: 15px;font-weight: bold;" onclick="upperSize(this)">여기</span>를 클릭하세요.
+    </div>
+    <script>
+        /*
+        위 span 태그 클릭시 글자 크기가 5픽셀씩 커지도록 구현하세요.
+    
+          * dom 객체의 스타일 속성값 알아오는 방법
+        let size = dom.style.fontSize
+        */
+
+        // 함수 정의: upperSize
+        // 매개변수: dom - 함수를 호출한 DOM 요소(this로 전달됨)
+        function upperSize(dom) {
+            // 현재 글자 크기 가져오기
+            let size = parseInt(dom.style.fontSize.replace("px", "")); //정수로 바꾸고 px 단위를 삭제하여 숫자만 생성시켜 size변수에 담음
+            console.log(size);// 현재 글자 크기 콘솔 출력
+            // 새로운 글자 크기 계산 (현재 크기 + 5픽셀)
+            dom.style.fontSize = size + 5 + "px";// 새로운 크기로 스타일 속성 설정
+
+        }
+    </script>
+</body>
+
+</html>

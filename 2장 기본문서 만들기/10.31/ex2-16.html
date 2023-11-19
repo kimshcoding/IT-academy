@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>기본 테이블 만들기</title>
+</head>
+<body>
+    <h3>기본 구조를 가진 표</h3>
+<hr>
+<table border="1">  <!--1픽셀 테두리. CSS3로 나타내는 것이 바람직함-->
+	<caption>1학기 성적</caption>
+	<thead>
+		<tr><th>이름</th><th>HTML</th><th>CSS</th></tr>
+	</thead>
+	<tfoot>
+		<tr><th>합</th><th>225</th><th>230</th></tr>
+	</tfoot>
+	<tbody>
+		<tr><td>황기태</td><td>80</td><td>70</td></tr>
+		<tr><td>이재문</td><td>95</td><td>99</td></tr>
+		<tr><td>이병은</td><td>40</td><td>61</td></tr>
+	</tbody>
+</table>
+<hr>
+    <!-- 셀 병합하기-->
+      <table border="1">
+        <tr>
+            <td colspan="2">1</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td colspan="2">8</td>
+        </tr>
+      </table>
+      <hr>
+
+      <!--4행 4열 표만들기-->
+      <table border="1">
+        <tbody>
+        <tr>
+            <td rowspan="2" colspan="2">1</td>
+            <td>3</td>
+            <td rowspan="4">4</td>
+        </tr>
+        <tr>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <hr>
+      <table border="1">
+        <tbody>
+            <tr>
+                <td colspan="3">1</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>6</td>
+                <td rowspan="3" colspan="2">7</td>
+            </tr>
+            <tr>
+                <td rowspan="2">9</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td rowspan="2">14</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>19</td>
+                <td>20</td>
+            </tr>
+        </tbody>
+      </table>
+      <hr>
+      <table border="1">
+        <tbody>
+            <tr>
+                <td rowspan="3">A</td>
+                <td colspan="2">B</td>
+            </tr>
+            <tr>
+                <td rowspan="2">C</td>
+                <td>D</td>
+            </tr>
+            <tr>
+                <td>E</td>
+            </tr>
+        </tbody>
+      </table>
+      <hr>
+       <table border="1">
+           <thead>
+            <tr><th>번호</th><th>제목</th><th>작성자</th><th>작성일</th><th>조회수</th></tr>
+           </thead>
+        <tbody>
+        <tr>
+            <td align="right">1</td>
+            <td>첫번째 제목입니다.</td>
+            <td>홍길동</td>
+            <td align="center">2023-10-31</td>
+            <td align="right">20</td>
+        </tr>
+        <tr>
+            <td align="right">2</td>
+            <td>두번째 제목입니다.</td>
+            <td>이길동</td>
+            <td align="center">2023-11-01</td> 
+            <td align="right">21</td>
+        </tr>
+        <tr>
+            <td align="right">3</td>
+            <td>세번째 제목입니다.</td> 
+            <td>박길동</td>
+            <td align="center">2023-11-02</td>
+            <td align="right">22</td>
+        </tr>
+        <tr>
+            <td align="right">4</td>
+            <td>네번째 제목입니다.</td>
+            <td>김길동</td>
+            <td align="center">2023-11-03</td>
+            <td align="right">23</td>
+        </tr>
+        </tbody>
+       </table>
+       <hr>
+       <table border="1">
+        <tbody>
+            <tr>
+                <th>이름</th>
+                <td>홍길동</td>
+            </tr>
+            <tr>
+                <th>나이</th>
+                <td>33</td>
+            </tr>
+            <tr>
+                <th>주소</th>
+                <td>전주 덕진구</td>
+            </tr>
+           <tr>
+                <th>연락처</th>
+                <td>010-1111-2222</td>
+            </tr>
+        </tbody>
+       </table>
+</body>
+</html>
+

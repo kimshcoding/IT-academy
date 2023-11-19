@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>조건 연산자</title>
+</head>
+
+<body>
+    <script>
+        //조건 연산자 (삼항연산자, 피연산자 3개)
+        //구문=> 조건식 ? 참일 때 값 : 거짓일 때 값
+
+        let a = 10;
+
+        let result = true ? 'a' : 'b'; // result = 'a';
+
+        let age = 20;
+
+        //age가 18보다 크면 성인 출력 아니면 미성년자 출력
+
+        result = age > 18 ? '성인' : '미성년자';
+        console.log(result);
+
+        let num = 30;
+
+        //조건 연산자를 사용하여 num의 값이 50보다 크면 '50초과'
+        //작거나 같으면 '50 이하'라고 출력
+
+        result = num > 50 ? '50 초과' : '50 이하';
+        //result = num <= 50 ? '50 이하':'50 초과';
+        console.log(result);
+
+        num = 15;
+        let num2 = 20;
+        //조건연산자를 사용하여 둘 중에 더 큰 값을 출력하세요.
+
+        console.log(num > num2 ? num : num2);
+    </script>
+</body>
+
+</html>

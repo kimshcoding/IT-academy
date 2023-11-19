@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>document.write() 활용</title>
+</head>
+
+<body>
+    <h3>document.write() 활용</h3>
+    <hr>
+    <script>
+        document.write("<h3>Welcome!</h3>");
+        document.write("2 + 5 는 <br>");
+        document.write("<mark>7 입니다.</mark>");
+
+        /*
+        자바 스크립트에서는 세 종류의 메시지 다이얼로그가 존재한다.
+        1. prompt (메시지, 초기값) -> 사용자에게 값 입력을 유도하는 메시지 창
+        2. confirm(메시지) -> 사용자에게 확인 또는 취소를 유도하는 메시지 창
+        3. alert(메시지) -> 사용자에게 안내의 목적으로 사용하는 메시지 창
+        
+        메시지 창을 벗어날 때 까지 다음 실행문이 실행되지 않는다.
+        */
+        prompt("값을 입력하세요.");
+        confirm("정말 취소하시겠습니까?");
+        alert("경고 메시지 출력");
+    </script>
+</body>
+
+</html>

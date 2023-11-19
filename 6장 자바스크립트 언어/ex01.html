@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="ex02.js"></script>
+    <style>
+        #box {
+            visibility: hidden;
+        }
+    </style>
+    <!--
+        <script> 태그를 사용하여 자바스크립트 작성시 태그는
+            head 태크, body 태크면 어디든지 올 수 있다.
+            이때, <script> 태그의 가장 안전한 위치는 body 태그 맨 아래이다.
+    -->
+    <script>
+        alert(1);
+        document.getElementById("box").style.backgroundColor = "red";
+    </script>
+</head>
+
+<body>
+    <script>
+        alert(2);
+        document.getElementById("box").style.backgroundColor = "yellow";
+    </script>
+    <!--*자바 스크립트를 태크내 이벤트 코드로 작성하는 방법
+        *모든 요소는 이벤트와 관련된 속성들이 있으며 그 이벤트 속성에 대한
+        실행 코드로 자바스크립트를 html 내에 작성할 수 있다.
+        *인라인(html 내)으로 작성된 자바스크립트는 해당 요소에만 동작한다.
+        *외부 자바스크립트 파일은 html 내에서 script 태그의 src
+    -->
+    <button onclick="document.getElementById('box').style.visibility='visible';">click!!</button>
+    <button>click!!</button>
+    <div id="box">안보였다 보여지는 상자</div>
+    <a href="javascript:alert(6)">링크</a>
+
+    <script>
+        alert(3);
+        document.getElementById("box").style.backgroundColor = "green";
+    </script>
+</body>
+
+</html>

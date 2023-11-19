@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body{
+            color: orange;
+        }
+        #d1 *{
+            border: 1px solid black;  /* "*"속성은 본문의 모든 요소를 선택함!*/
+        }
+        input[type=text]{                    /* "속성 셀렉터" */
+            background-color: skyblue;
+        }
+        input[type=password]{
+            background-color: pink;
+        }
+        input[type=email]{
+            background-color: greenyellow;
+        }
+        input[type=url]{
+            background-color: gray;
+        }
+        #here>#d2[test]{
+            background-color: yellow;
+        }
+        #hoverBox:hover{
+            background-color: brown;
+        }
+        #activeBox:active{
+            background-color: blue;
+        }
+        #menuBox li:hover{
+            text-decoration: underline;
+        }
+        #menuBox li:active{
+            background-color: gray;
+        }
+        #test:focus{
+            background-color: beige;
+        }
+        #linkBox a:visited{
+            color: gray;
+        }
+        #linkBox a:link{
+            color: brown;
+        }
+        #linkBox a:active{
+            color: red;
+        }
+        #letterBox:first-letter{
+            color: red;
+            font-size: 20px;
+        }
+        #letterBox:first-line{
+            color: darkred;
+        }
+        #box2>div:first-child{
+            background-color: deeppink;
+        }
+        #box2>div:last-child{
+            background-color: deeppink;
+        }
+        #box2>div:nth-child(2){
+            background-color: green;
+        }
+        #box3>div:nth-child(odd){     /*홀수자식만 바뀜*/
+            background-color: coral;
+        }
+        #t4 tr:nth-child(odd){
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    <h1>셀렉터 연습하기</h1>
+    <div id="d1">
+        <h2>전체 셀럭터</h2>
+        <div>
+            * 기호를 사용하여 본문의 모든 요소를 선택한다.
+        </div>
+    </div>
+
+    <div id="here">
+        <h2>속성 선택자</h2>
+            <input type="text"><br>      <!--배경 하늘색-->
+            <input type="password"><br>  <!--배경 분홍색-->
+            <input type="email"><br>     <!--배경 연두색-->
+            <input type="url"><br>       <!--배경 회색-->
+        <div id="d2" test="ttt">
+        sample
+        </div>
+        <div id="d2" test="aaa">
+        sample
+        </div>
+    </div>
+
+    <div>
+        <h2>가상 클래스 선택자</h2>
+        <div id="hoverBox">
+            여기에 마우스를 올리면 배경색이 변합니다.
+        </div>
+        <div id="activeBox">
+            여기에 마우스를 누르고 있으면 배경색이 변합니다.
+        </div>
+        <ul id="menuBox">
+            <li>메뉴1</li>
+            <li>메뉴2</li>
+            <li>메뉴3</li>
+        </ul>
+        <div>
+            <input type="text" id="test">
+        </div>
+        <div id="linkBox">
+            <a href="http://www.naver.com">클릭!!</a>
+        </div>
+        <div id="letterBox">
+            가상클래스 셀렉터<br>
+            아직 일어아지 않은 상황에 대하여 미리 예측하여<br>
+            css를 선언해두는 것을 의미한다.
+        </div>
+        <hr>
+        <div id="box2">
+            <div>child1</div>
+            <div>child2</div>
+            <div>child3</div>
+            <div>child4</div>
+            <div>child5</div>
+        </div>
+        <div id="box3">
+            <div>child1</div>
+            <div>child2</div>
+            <div>child3</div>
+            <div>child4</div>
+            <div>child5</div>
+        </div>
+<hr>
+        <table id="t4">
+            <tr>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

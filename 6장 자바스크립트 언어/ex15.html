@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>증감 연산자</title>
+</head>
+
+<body>
+    <script>
+        //증감 연산자의 위치 (단일 연산자)
+        //1. ++/--변수 : 전위 연산자 (연산 우선순위 제일 높다)
+        //2. 변수 ++/-- : 후위 연산자
+
+        let num = 10; //기준
+
+        //증가 연산자 (++ 기호 사용) : 1씩 증가
+
+        //1)전위 증가 연산자
+        console.log(++num); //11 num = num+1;
+
+        let result = ++num + 2; //num = num+1 -> num+2 -> result 대입
+
+        console.log(result); //14
+        console.log(num); //12
+
+        ++num; //13
+        console.log(++num); //14
+        console.log(num); //14
+
+        //2)후위 증가 연산자
+        //num ++
+
+        result = num++ + 3; // result = 14 + 3 -> num = num+1;
+        console.log(result); //17
+        console.log(num); //15
+
+        console.log(num++); //15
+        console.log(num); //16
+
+        //감소 연산자 (-- 기호 사용) : 1씩 감소
+        //3) 전위 감소
+        console.log(--num); //15
+
+        //4) 후위 감소
+        console.log(num--); //15
+        console.log(num); //14
+
+        num++; //15
+        ++num; //16
+        num--; //15
+        console.log(num); //15
+    </script>
+</body>
+
+</html>

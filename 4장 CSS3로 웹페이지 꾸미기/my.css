@@ -1,0 +1,29 @@
+body{
+    background-color: aliceblue;
+}    
+h1{
+    text-align: center;
+    color:brown;
+}
+header{
+    border-bottom: 1px solid rgb(204, 195, 195);
+}
+section{
+    background-color: pink;
+    margin: 10px;
+}
+p>span{
+    color: blue;
+    font-weight: bold;
+    font-family: initial;
+}
+footer{
+    background-color: orange;
+    border-radius: 10px;
+}
+p{
+    font-family: 휴먼편지체, 굴림, serif;
+}
+footer p{
+    text-indent: 1em;
+}

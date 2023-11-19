@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 이벤트 다루기 - 강사님</title>
+
+    <script>
+        function changeYellow(obj) {
+            obj.style.backgroundColor = "yellow";
+        }
+    </script>
+
+    <style>
+        td {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="title" onclick="changeYellow(this)">이벤트 리스너 등록하기</h2>
+    <hr>
+    <table border="1">
+        <tr> <!--홀수행 마우스 오버시 하늘색 배경-->
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr> <!--짝수행 마우스 오버시 밝은회색 배경-->
+            <td>4</td>
+            <td id="here">5</td>
+            <td>6</td>
+        </tr>
+        <tr> <!--홀수행 마우스 오버시 하늘색 배경-->
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+    <script>
+        let trs = document.getElementsByTagName("tr");
+        for (let i = 0; i < trs.length; i++) {
+            if (i % 2 == 0) {  //홀수행을 찾음
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

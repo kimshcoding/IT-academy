@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 객체의 this</title>
+</head>
+<body>
+    <!-- input 요소를 생성하고 id 속성을 't1'로 지정 -->
+    <input type="text" id="t1" onchange="altertT1(this)">
+
+    <!--
+        onchange는 HTML 요소의 속성 중 하나로, 해당 요소의 값이 변경될 때 발생하는 이벤트를 처리하기 위해 사용됩니다. 
+        주로 <input>, <select>, <textarea>와 같은 사용자 입력을 받는 요소들에 적용됩니다.
+    -->
+
+    <script>
+        // JavaScript 코드 시작
+        // 함수 정의: altertT1
+        // 매개변수: dom - 함수를 호출한 DOM 요소(this로 전달됨)
+        function altertT1(dom){
+            // 함수 내용 시작
+            // 전달받은 DOM 요소의 value 속성을 가져와서 변수 value에 저장
+            let value = dom.value;
+            // 경고창으로 변수 value의 값을 출력
+            alert(value);
+            // 함수 내용 종료
+        }
+        // JavaScript 코드 종료
+    </script>
+</body>
+</html>

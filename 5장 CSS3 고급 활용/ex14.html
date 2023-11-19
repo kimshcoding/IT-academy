@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #visibilityBox:hover{
+            visibility: hidden;
+        }
+        #span{
+            opacity: 0;
+            transition: opacity 0,3s;
+        }
+        #span:hover{
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <h2>visibility 실습하기</h2>
+    <div id="visibilityBox" style="width: 100px; height: 100px; background-color: red;"></div>
+    <div>기준</div>
+    괄호 안에 마우스를 올리면 텍스트가 보입니다.
+    (<span id="span">짜잔</span>)마우스를 올려보세요
+</body>
+</html>

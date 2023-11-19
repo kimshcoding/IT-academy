@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>345쪽 실습문제5</title>
+</head>
+
+<body>
+    <h3>문자열 배열 다루기</h3>
+    <hr>
+    <script>
+        let names = ["wonsun", "jaemoonlee", "kitae", "gracehwang"];
+
+        //5_1
+        document.write("이름 : " + names.join(" ") + "<br>");
+
+        //5-3
+        let firstText = names[0]; // 최소 wonsun 배열을 담음, 항상 가장 첫 번째
+        for (let i = 0; i < names.length; i++) {
+            if (firstText > names[i]) {
+                firstText = names[i];
+            }
+        }
+
+        document.write("가장 먼저 나오는 이름 : " + firstText + "<br>");
+
+        //5-4
+        document.write("증가순 이름 : " + names.sort().join(" "));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>open Challenge</title>
+</head>
+
+<body>
+    <h2>별 문자 출력하기</h2>
+    <hr>
+    <script>
+        let text = prompt("정수를 입력하세요.");
+        let num = parseInt(text); // 사용자 입력값이 숫자이면 정수로 변환 아니면 NaN 값
+        let isNumber = isNaN(num); //isNaN 역할은 괄호 안 값이 NaN이면 true 아니면 false
+                                    // NaN: 숫자로서의 정상적인 값이 아니다
+
+        if (isNumber) {
+            document.write("입력 오류입니다."); //문자를 입력하면 "입력 오류입니다" 출력됨
+        } else {
+            let star = "*";
+            for (let cnt = 1; cnt <= num; cnt++) {
+                document.write(star + "<br>");
+                star += "*";
+            }
+        }
+    </script>
+</body>
+
+</html>

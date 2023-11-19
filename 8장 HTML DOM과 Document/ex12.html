@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head id="myHead">
+    <meta charset="UTF-8">
+    <title>document 객체의 주요 프로퍼티</title>
+    <script>
+        // 문서 로딩 중일 때의 readyState을 가져와 text 변수에 저장
+        let text = "문서 로딩 중일 때 readyState = " + document.readyState + "\n";
+    </script>
+</head>
+
+<body style="background-color: yellow; color: blue; direction: rtl" onload="printProperties()">
+    <h3>document의 주요 프로퍼티</h3>
+    <hr>
+    <a href="http://www.naver.com">네이버 홈페이지</a>
+    <div>이곳은 div 영역입니다.</div>
+    <input id="input" type="text" value="여기 포커스가 있습니다">
+
+    <script>
+        // 문서가 완전히 로드(출력)되었을 때, 현재 document의 프로퍼티 출력 
+        function printProperties() {
+            document.getElementById("input").focus(); // <input> 태그에 포커스를 줌
+
+            // 주요 프로퍼티들을 text 변수에 추가
+            text += "1. location =" + document.location + "\n"; // 문서의 URL 반환
+            text += "2. URL =" + document.URL + "\n"; // 문서의 URL 반환
+            text += "3. title =" + document.title + "\n"; // 문서의 제목 반환
+            text += "4. head의 id =" + document.head.id + "\n"; // head 요소의 id 속성 값 반환
+            text += "5. body color =" + document.body.style.color + "\n"; // body 요소의 글자 색상 반환
+            text += "6. domain =" + document.domain + "\n"; // 문서의 도메인 이름 반환
+            text += "7. lastModified =" + document.lastModified + "\n"; // 문서의 마지막 수정 일자 반환
+            text += "8. defaultView = " + document.defaultView + "\n"; // 문서의 기본 뷰 반환
+            console.log(document.defaultView);
+            text += "9. 문서의 로드 완료 후 readyState = " + document.readyState + "\n"; // 문서의 로드 상태 반환
+            text += "10. referrer = " + document.referrer + "\n"; // 문서를 참조한 문서의 URL 반환
+            text += "11. activeElement = " + document.activeElement.value + "\n"; // 현재 활성화된 요소 반환
+            text += "12. documentElement의 태그 이름 = " + document.documentElement.tagName + "\n"; // 문서 요소의 태그 이름 반환
+            alert(text); // 저장된 내용을 알림창으로 출력
+        }
+
+        /*
+        document.readyState: 문서의 로딩 상태를 나타내는 프로퍼티. "loading"일 때 문서 로딩 중, "complete"일 때 로딩 완료.
+
+        document.location: 현재 문서의 URL을 나타내는 프로퍼티.
+        
+        document.URL: 현재 문서의 URL을 나타내는 프로퍼티.
+        
+        document.title: 현재 문서의 제목을 나타내는 프로퍼티.
+        
+        document.head.id: <head> 요소의 id 속성 값을 나타내는 프로퍼티.
+        
+        document.body.style.color: <body> 요소의 글자 색상을 나타내는 프로퍼티.
+        
+        document.domain: 현재 문서의 도메인 이름을 나타내는 프로퍼티.
+        
+        document.lastModified: 현재 문서의 마지막 수정 일자를 나타내는 프로퍼티.
+        
+        document.defaultView: 현재 문서의 기본 뷰를 나타내는 프로퍼티.
+        
+        document.referrer: 현재 문서를 참조한 문서의 URL을 나타내는 프로퍼티.
+        
+        document.activeElement.value: 현재 활성화된 요소의 값(value)을 나타내는 프로퍼티.
+        
+        document.documentElement.tagName: 문서 요소의 태그 이름을 나타내는 프로퍼티.
+        */
+    </script>
+
+</body>
+
+</html>

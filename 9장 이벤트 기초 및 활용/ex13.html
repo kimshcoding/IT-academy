@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>마우스 관련 이벤트들</title>
+    <style>
+        body>div {
+            width: 150px;
+            height: 150px;
+            border: 1px solid black;
+            margin-top: 10px;
+            background-color: yellow;
+        }
+
+        div>div {
+            width: 80px;
+            height: 80px;
+            border: 1px solid black;
+            margin: 10px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        //1.dblclick :더블 클릭 이벤트
+        let div1 = document.getElementsByTagName("div")[0];
+        div1.ondblclick = function () {
+            let bc = this.style.backgroundColor;
+            if (bc == 'yellow' || bc == '') {
+                this.style.backgroundColor = "orange";
+            } else {
+                this.style.backgroundColor = "yellow";
+            }
+        }
+    </script>
+    <div></div>
+    <script>
+        //2.mousedown :마우스 버튼을 눌렀을 때 발생
+        //이때, 이벤트 객체는 발생한 마우스의 버튼 값을 알 수 있다.
+        // 0:왼쪽버튼,1:가운데버튼,2:오른쪽버튼
+        let div2 = document.getElementsByTagName("div")[1];
+        div2.onmousedown = function (e) {
+            this.innerHTML = "<h3>눌린 마우스 버튼 번호:" + e.button + "</h3>";
+        }
+    </script>
+
+    <div>
+        <div>child</div>
+    </div>
+    <span id="r1"></span>
+    <script>
+        //3.mouseover : 마우스가 요소의 영역 안으로 들어왓을때 발생(자식영역포함)
+        var cnt1 = 0;
+        let div3 = document.getElementsByTagName("div")[2];
+        div3.onmouseover = function () {
+            cnt1++;
+            document.getElementById("r1").innerHTML = "over:" + cnt1;
+        }
+    </script>
+
+    <div>
+        <div>child</div>
+    </div>
+    <span id="r2"></span>
+    <script>
+        //4.mouseenter:요소영역 안으로 마우스가 들어오면 발생(자식포함X)
+        var cnt2 = 0;
+        let div4 = document.getElementsByTagName("div")[4];
+        div4.onmouseenter = function () {
+            cnt2++;
+            document.getElementById("r2").innerHTML = "over:" + cnt2;
+        }
+    </script>
+
+    <div>
+        <div>child</div>
+    </div>
+    <span id="r3"></span>
+    <script>
+        //mouseout: 영역안에서 마우스가 벗어날때 발생(자식요소포함O)
+        var cnt3 = 0;
+        let div5 = document.getElementsByTagName("div")[6]
+        div5.onmouseout = function () {
+            cnt3++;
+            document.getElementById("r3").innerHTML = "out:" + cnt3;
+        }
+    </script>
+
+    <div>
+        <div>child</div>
+    </div>
+    <span id="r4"></span>
+    <script>
+        //mouseleave: 영역안에서 마우스가 벗어날때 발생(자식요소포함x)
+        var cnt4 = 0;
+        let div6 = document.getElementsByTagName("div")[8]
+        div6.onmouseleave = function () {
+            cnt4++;
+            document.getElementById("r4").innerHTML = "out:" + cnt4;
+        }
+    </script>
+
+    <div></div>
+    <script>
+        //mouseup : 영역안에서 마우스버튼이 눌렸다가 올라올때 발생
+        let div7 = document.getElementsByTagName("div")[10];
+        div7.onmouseup = function () {
+            alert("up!");
+        }
+    </script>
+
+    <div></div>
+    <script>
+        //wheel : 영역안에서 마우스 휠을 굴릴때 발생
+        let div8 = document.getElementsByTagName("div")[11];
+        div8.onwheel = function (e) {
+            if (e.wheelDelta > 0) {
+                this.innerHTML = "<strong>위로</strong>";
+            } else {
+                this.innerHTML = "<strong>아래로</strong>";
+            }
+        }
+    </script>
+</body>
+
+</html>

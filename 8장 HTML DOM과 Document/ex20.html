@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>dom 구조를 활용한 javascript 요소 찾기 예제3</title>
+    <style>
+        .result {
+            border: 1px solid black;
+            margin: 5px 0px;
+        }
+    </style>
+    <script>
+        function copyText() {
+            let textBox = document.getElementById("here");
+            let text = textBox.value;
+            document.getElementsByClassName("result")[0].textContent = text;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>예제3</h2>
+    -아래 버튼을 클릭하면 id="here"인 태그 안의 텍스트를 class="result" 태그 안으로 복사하여 삽입해주세요.
+    <br>
+    </br>
+    <button onclick="copyText()">click</button>
+    <input type="text" id="here">
+    <div class="result">
+
+    </div>
+</body>
+
+</html>

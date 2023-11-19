@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>함수 실습</title>
+</head>
+<body>
+    <script>
+        /*
+        이름, 나이, 연락처, 주소 정보를 전달 받는 함수를 정의한다.
+        함수를 호출하면 화면 아래에 실행결과가 나올 수 있도록 한다.
+
+        호출) 함수명('홍길동', '010-1111-1111', '전주 덕진구', 20)
+        실행결과)
+        이름: 홍길동
+        나이: 20세
+        주소: 전주 덕진구
+        연락처: 010-1111-1111
+        */
+
+        function info(name, phone, age, address){
+        document.write('이름: ' + name + "<br>");
+        document.write('나이: ' + age + "<br>");
+        document.write('연락처: ' + phone + "<br>");
+        document.write('주소: ' + address + "<br>");
+        }
+        
+        
+        info('홍길동', '010-1111-1111', '전주 덕진구', 20)
+
+    </script>
+</body>
+</html>

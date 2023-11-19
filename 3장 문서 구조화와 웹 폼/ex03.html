@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>웹폼 만들기</title>
+</head>
+<body>
+    <form name="frm" method="get" action="#">
+    <h1>텍스트 박스 다루기</h1>
+    <!--
+        * 입력양식들의 name속성은 입력 값을 찾는 키 역할을 하므로 필수 작성해야함.
+        * value 속성은 입력양식의 초기값을 작성할 수 있다.
+        * placeholder 속성은 입력양식에 값을 유도하는 힌트를 작성할 수 있다.
+        * name 속성을 중복시키면 안됨.
+        * size 속성은 입력양식의 길이를 제어한다.
+        * maxlength 속성은 입력양식의 문자 갯수를 제어하는데 한글은 정확하지 않을 수 있다.
+    -->
+
+    <input type="text" name="t1" value="초기값"> 
+    <br>
+    <input type="text" name="t2" placeholder="텍스트를 입력하세요"> 
+    <br>
+    <input type="text" name="t3" size="50" maxlength="5"> 
+    <br>
+
+    <!--
+       * input type="password" 입력양식은 비밀번호를 입력하는 양식이다.
+         입력값은 검정 동그라미 형태로 출력된다.
+    -->
+
+    password :
+    <input type="password" name="p1" value="1234" placeholder="비밀번호를 입력하세요"> 
+    <br>
+
+    <!--
+        textarea 태크는 여러줄을 입력할 수 있는 텍스트 양식이다.
+        cols와 rows 속성으로 너비 높이를 조절할 수 있다.
+        초기값은 시작, 종료 태그 사이에 입력한다. 이때 빈칸이 있으면 양식안에
+        빈간이 노출 되므로 주의한다.
+    -->
+
+    textarea :
+    <br>
+    <textarea name="ta1" id="" cols="50" rows="10">내용을 입력하세요</textarea>
+    <br>
+
+    <!--
+        email, url 양식은 화면에서는 일반 텍스트 박스로 보이나 제출시 유효성 검사를 한다.
+        required 속성은 제출시 필수 값 입력 검증을 한다.
+    -->
+
+    email :
+    <input type="email" name="e1" required>
+    <br>
+
+    url : 
+    <input type="url" name="u1">
+    <br>
+
+    <!--
+      datalist 태크는 텍스트 박스의 목록을 만드는 태그이다.
+      이때 datalist의 id 속성값과 텍스트 박스의 list 속성값이 일치해야한다.
+    -->
+
+    datalist : 
+    <input type="text" name="dt1" list="dt1">
+    <datalist id="dt1">
+        <option>apple</option>
+        <option>banana</option>
+        <option>grape</option>
+    </datalist>
+    <br>
+
+
+    <input type="submit">
+    </form>
+</body>
+</html>

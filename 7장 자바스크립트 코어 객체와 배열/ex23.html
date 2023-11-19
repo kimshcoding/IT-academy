@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>342쪽 연습문제 10번</title>
+</head>
+
+<body>
+    <script>
+        // new Object()를 사용하여 객체 생성
+        let box = new Object();
+
+        // 객체 속성 설정
+        box.color = "red";
+        box.size = 10;
+        box.amount = 0;
+        box.fill = function () { this.amount += 2; }
+        box.consume = function () { this.amount -= 2; }
+
+        // fill 메소드 호출
+        box.fill();
+        document.write(box.amount + "<br>") //0 + 2 = 2
+        box.consume();
+        document.write(box.amount + "<br>") //2 - 2 = 0
+        // 결과 출력
+    </script>
+
+</body>
+
+</html>

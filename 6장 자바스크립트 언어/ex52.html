@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>함수 실습</title>
+</head>
+
+<body>
+    <script>
+        //함수 정의
+        function bigText(t1, t2) {
+            if(t1>t2){
+                return t1;
+            }else{
+                return t2;
+            }
+        }
+        let result = bigText('a', 'b');
+        document.write('a와 b중 더 나중에 오는 알파벳은? ' + result + '<br>')
+
+        result = bigText('c', 'd');
+        document.write('c와 d중 더 나중에 오는 알파벳은? ' + result + '<br>')
+
+
+    </script>
+</body>
+
+</html>

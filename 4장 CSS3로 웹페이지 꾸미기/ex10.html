@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #here>p{
+            color: blue;
+        }
+        #here>div>p{
+            color: green;
+        }
+        #here>div>div>h4{
+            color: orange;
+        }
+        #t1>tbody>tr>th{
+            color: green;
+        }
+        #t1>tbody>tr>td{
+            color: orange;
+        }
+        #t2>thead>tr>th{
+            background-color: orange;
+        }
+        #t2>tbody>tr>td{
+            background-color: green;
+        }
+        #here2 h2{
+            background-color: yellow;
+        }
+        #t3 th{
+            background-color: orange;
+        }
+        .box>h3{
+            background-color: yellow;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>조합 셀렉터</h1>
+
+    <div id="here">
+        <h2>자식 셀렉터</h2>
+        <div>
+            <p>
+                here div 태그의 후손 div입니다. (텍스트 초록색으로 변경)
+            </p>
+            <div>
+                <h4>이 텍스트를 자식 선택자를 사용하여 주황색으로 변경</h4>
+            </div>
+        </div>
+        <p>
+            here div의 자식 div입니다. (텍스트 파란색으로 변경)
+        </p>
+    </div>
+<hr>
+    <p></p>
+
+    <table border="1" id="t1">
+        <tbody>
+            <tr>
+                <th>이름</th>
+                <td>홍길동</td>
+            </tr>
+            <tr>
+                <th>나이</th>
+                <td>30</td>
+            </tr>
+            <tr>
+                <th>연락처</th>
+                <td>010-1111-1111</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p></p>
+
+    <table border="1" id="t2">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일</th>
+            </tr>    
+        </thead>
+        <tbody>       
+            <tr>
+                <td>1</td>
+                <td>첫번째 제목입니다</td>
+                <td>홍길동</td>
+                <td>2023-11-02</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>두번째 제목입니다</td>
+                <td>홍길동</td>
+                <td>2023-11-02</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h1>후손 셀렉터 사용하기</h1>
+    -후손은 기준 태그의 자식과 손주를 포함한 태그들을 의미함.
+    <div id="here2">
+        <h2>here2의 자식 h2</h2>  <!--배경 노란색-->
+        <div>
+            <h2>here2 후손 h2</h2>   <!--배경 노란색-->
+            here2의 자식 div
+        </div>
+    </div>
+<hr>
+<p></p>
+
+    <table border="1" id="t3">
+        <tbody>
+            <tr>
+                <th>이름</th>
+                <td>홍길동</td>
+            </tr>
+            <tr>
+                <th>나이</th>
+                <td>30</td>
+            </tr>
+            <tr>
+                <th>연락처</th>
+                <td>010-1111-1111</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <div class="box">
+            <h3>box1</h3>
+        </div>
+
+        <div class="box">
+            <h3>box2</h3>
+        </div>
+
+        <div class="box">
+            <h3>box3</h3>
+        </div>
+
+</body>
+</html>

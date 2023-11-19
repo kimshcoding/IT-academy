@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>while 문 실습</title>
+</head>
+
+<body>
+    <script>
+        /*
+        사용자에게 계속 두 수를 입력받아 두 수의 곱을 출력한다.
+        이때 두 수의 곱이 100 이상이면 반복을 종료한다.
+        */
+
+        let flag = true;
+        while (flag) {  //while문 무한반복상태임
+            let num1 = prompt("숫자1 입력하세요.");
+            let num2 = prompt("숫자2 입력하세요.");
+
+            if (num1 * num2 >= 100) { //두 수의 곱이 100 이상이면 false가 되어 반복문을 빠져나감
+                flag = false;
+            }
+        }
+        document.write("종료<br>")
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>실습문제10</title>
+</head>
+
+<body>
+    <script>
+        let books = []; // 사용자가 입력한 책 객체들이 대입될 배열
+
+        for (let i = 0; i < 5; i++) {
+            let text = prompt("콤마(,)로 분리하면서 책 제목, 저자, 가격 순으로 입력");
+
+            let textArr = text.split(",");
+            let book = new Object(); // new Object() 대신 중괄호를 사용하여 객체를 생성
+            book.title = textArr[0];
+            book.author = textArr[1];
+            book.price = parseInt(textArr[2]);
+
+            books[i] = book;
+        }
+
+        for (let i = 0; i < books.length; i++) {
+            document.write(books[i].title, " ", books[i].author, " ", books[i].price, "<br>");
+        }
+
+        console.log(books);
+        let bigPrice = 0; // 항상 가장 큰 금액
+        let bigPriceNm = ""; // 항상 가장 큰 금액의 저자
+        for (let i = 0; i < books.length; i++) {
+            if (bigPrice < books[i].price) {
+                bigPrice = books[i].price;
+                bigPriceNm = books[i].author;
+            }
+        }
+
+        document.write("가장 큰 금액의 저자: " + bigPriceNm);
+    </script>
+</body>
+
+</html>

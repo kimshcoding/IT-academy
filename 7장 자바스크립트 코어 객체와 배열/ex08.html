@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Date 객체 다루기</title>
+</head>
+
+<body>
+    <script>
+        // Date 객체 : 시간정보를 다루는 자바스크립트 코어객체이다.
+        //             객체 생성 시간에 대한 정보를 다룰 수 있다.
+        //             특정 날짜에 대한 시간 정보를 다룰 수 있다.
+        //             기본적으로 국제표준 규격에 맞춰 날짜 정보를 다루기 때문에
+        //             여러 메소드를 사용하여 원하는 날짜의 포맷(데이터를 기억하거나 인쇄하기 위하여 설정하는 일정한 형식.)을 만들 수 있다.
+
+        // 1. 객체 생성 시간 정보를 갖는 날짜 객체 생성
+        let today = new Date();
+        document.write(today);
+
+        // 2. 특정 날짜에 대한 시간 정보를 갖는 날짜 객체 생성
+        // *Date 객체에서 월은 0이 1월부터 시작한다.
+        let otherday = new Date(2023, 2, 13, 11, 55, 12);
+        document.write("<br>" + otherday);
+
+        //otherday = new Date("2023-2-13 12:20:33");
+        otherday = new Date("2023.2.13 12:20:33");   // " " 사용하면 월이 제대로 출력됨
+        document.write("<br>" + otherday);
+
+        //원하는 날짜 포맷 만들기
+        //원하는 날짜 포맷 : 2023년 11월 14일
+        today = new Date();
+
+        let year = today.getFullYear(); // 날짜 객체의 년도 4자리
+        let month = today.getMonth() + 1; // 날짜 객체의 월정보일 때 0이 1월
+        let date = today.getDate();     // 날짜 객체의 일 정보
+
+        document.write("<br>" + year + "년 " + month + "월 " + date + "일 ");
+
+        // 경과시간 구하기 : getTime() 사용
+        let milliTime = today.getTime()-otherday.getTime();
+        document.write("<br>" + milliTime);
+
+        let day = milliTime/1000/60/60/24
+        document.write("<br>" + Math.ceil(day));
+
+
+
+    </script>
+</body>
+
+</html>

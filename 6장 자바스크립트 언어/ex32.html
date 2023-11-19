@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>반복문</title>
+</head>
+
+<body>
+  <script>
+    //반복문 : 실행문 특정 구간을 특정기간동안 반복해서 실행하는 구문을 의미함.
+
+    //1.for문 : 반복의 횟수를 알고 있는 경우 사용한다.
+    /*
+      for(초기화식,조건식,증감식){
+        //반복하고자하는 실행문위치
+      }
+    */
+
+    /*
+      화면에 아래 처럼 출력될 수 있도록 실행문을 작성하세요.
+      <화면>
+      *
+      *
+      * 
+      * 
+      * 
+      
+    */
+    document.write("*<br>");
+    document.write("*<br>");
+    document.write("*<br>");
+    document.write("*<br>");
+    document.write("*<br>");
+
+    document.write("<hr>");
+
+    //for문 사용
+    //for문의 세개 식을 적절하게 사용하면 반복의 횟수를 정할 수 있다.
+
+    for (let num = 1; num <= 5; num++) {
+      document.write("*<br>");
+    }
+    document.write("<hr>");
+
+    for (let num = 1; num <= 10; num += 2) {
+      document.write("*<br>");
+    }
+
+    document.write("<hr>");
+    for (let num = 1; num <= 5; num++) {
+      document.write(num + "<br>");
+    }
+
+    //for문을 사용하여 1~10까지 한줄로 화면에 출력하세요.
+    for (let num = 1; num <= 10; num++) {
+      document.writeln(num);
+    }
+    document.write("<br>");
+    //for문을 사용하여 11~20까지 한줄로 화면에 출력하세요.
+    for (let n = 11; n <= 20; n++) {
+      document.writeln(n);
+    }
+
+    //for문을 사용하여 1~100까지의 합을 구하기
+
+    let sum = 0;
+    for (let num = 1; num <= 100; num++) {
+      //num 사용해서 누적값 합 구하기
+      sum += num;
+    }
+    document.write("<br>");
+    document.write("1~100합 : " + sum);
+
+    // 11~20까지의 수의 합을 출력하세요.
+    sum = 0;
+    for (let num = 11; num <= 20; num++) {
+      sum += num;
+    }
+    document.write("<br>");
+    document.write("11~20합 : " + sum);
+
+    /*
+      for문을 사용하여 아래의 실행결과를 화면에 출력하세요.
+
+      <실행결과>
+      *
+      **
+      ***
+      ****
+      *****
+
+    */
+    document.write("<br>");
+    let star = '*';
+    for (let num = 1; num <= 5; num++) {
+      document.write(star);
+      document.write("<br>");
+      star += '*';
+    }
+
+  </script>
+  <div style="width: 100px;height: 100px; background-color: yellow;border: 1px solid black;"></div>
+  <div style="width: 100px;height: 100px; background-color: yellow;border: 1px solid black;"></div>
+  <div style="width: 100px;height: 100px; background-color: yellow;border: 1px solid black;"></div>
+  <div style="width: 100px;height: 100px; background-color: yellow;border: 1px solid black;"></div>
+  <div style="width: 100px;height: 100px; background-color: yellow;border: 1px solid black;"></div>
+
+  <hr>
+  <script>
+    for (let num = 1; num <= 5; num++) {
+      document.write('<div style="width: 100px;height: 100px; background-color: yellow;border: 1px solid black;"></div>');
+    }
+
+  </script>
+
+  <hr>
+
+  <div style="border: 1px solid black;">
+    id : <input type="text" size="5"><br>
+    password:<input type="password" size="5">
+  </div>
+  <div style="border: 1px solid black;">
+    id : <input type="text" size="5"><br>
+    password:<input type="password" size="5">
+  </div>
+  <div style="border: 1px solid black;">
+    id : <input type="text" size="5"><br>
+    password:<input type="password" size="5">
+  </div>
+  <hr>
+  <script>
+    for (let num = 1; num <= 3; num++) {
+      document.write('<div style="border: 1px solid black;">');
+      document.write('id : <input type="text" size="5"><br>');
+      document.write('password:<input type="password" size="5">');
+      document.write('</div>');
+    }
+
+    //--------------------------------------------------------------------------
+
+    //다른 제어문과 함께 사용하는 반복문
+
+    //1~10까지 수 중에 짝수만 화면에 출력
+    for (let num = 1; num <= 10; num++) {
+
+      if (num % 2 == 0) {
+        document.write(num + "<br>");
+      }
+
+    }
+
+    document.write("<hr>");
+
+    for (let num = 1; num <= 3; num++) {
+      document.write(num + "<br>");
+      for (let num2 = 1; num2 <= 5; num2++) {
+        document.writeln(num + "_" + num2);
+      }
+      document.write("<br>");
+    }
+  </script>
+  <ul>
+    <li>항목1
+      <ul>
+        <li>항목1_1</li>
+        <li>항목1_2</li>
+      </ul>
+    </li>
+    <li>항목2
+      <ul>
+        <li>항목2_1</li>
+        <li>항목2_2</li>
+      </ul>
+    </li>
+    <li>항목3
+      <ul>
+        <li>항목3_1</li>
+        <li>항목3_2</li>
+      </ul>
+    </li>
+  </ul>
+  <hr>
+  <script>
+    document.write('<ul>');
+
+    for (let num = 1; num <= 3; num++) {
+      document.write('<li>항목' + num);
+      document.write('<ul>');
+      for (let num2 = 1; num2 <= 2; num2++) {
+        document.write('<li>항목' + num + '_' + num2 + '</li>');
+      }
+      document.write('</ul>');
+      document.write('</li>');
+    }
+
+    document.write('</ul>');
+
+  </script>
+  <hr>
+
+  <table border="1">
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+  </table>
+  <hr>
+  <script>
+    document.write('<table border="1">');
+    for (let num = 1; num <= 3; num++) {
+      document.write('<tr>');
+      for (let num2 = 1; num2 <= 3; num2++) {
+        document.write('<td>' + num + '</td>');
+      }
+      document.write('</tr>');
+    }
+    document.write('</table>');
+
+  </script>
+</body>
+
+</html>

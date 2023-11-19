@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 객체의 이벤트 리스너 다루기</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <div></div>
+    <div></div>
+    <script>
+        // DOM 객체를 사용하여 이벤트 리스너 등록하기
+
+        // 1) DOM 객체의 이벤트 프로퍼티 사용하기
+        document.getElementById("box").onclick = function () {
+            this.innerHTML = "clicked!!";
+        }
+
+        // 태그 이름이 div인 모든 요소에 대해 이벤트 등록
+        let divs = document.getElementsByTagName("div");
+
+        for (let i = 0; i < divs.length; i++) {
+            // 각 div 요소에 대해 마우스가 영역 안으로 들어오면 배경색 변경
+            let div = divs[i];
+            div.onmouseover = function () {
+                this.style.backgroundColor = "orange";
+            }
+
+            div.onmouseout = function() {
+                this.style.backgroundColor = "yellow";
+            }
+        }
+    </script>
+</body>
+
+</html>

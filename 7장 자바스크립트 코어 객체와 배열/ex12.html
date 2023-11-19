@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>배열 복습</title>
+</head>
+
+<body>
+    <script>
+        // 1문제) 1,2,3,4,5 를 원소로 갖는 배열을 선언하세요.
+        let arr = [1, 2, 3, 4, 5];
+        arr = new Array(1, 2, 3, 4, 5);
+        arr = new Array(5); //또는 new Array();
+        arr[0] = 1;
+        arr[1] = 2;
+        arr[2] = 3;
+        arr[3] = 4;
+        arr[4] = 5;
+
+        // 2문제) 위 배열에서 5번째 원소를 콘솔에 출력하세요.
+        console.log(arr[4]);
+
+        // 3문제) 위 배열에서 두 번째 원소와 네 번째 원소의 합을 출력하세요.
+        console.log(arr[1] + arr[3]);
+
+        // 4문제) 위 배열에서 모든 원소를 콘솔에 출력하세요.
+        for (let i = 0; i < arr.length; i++) {  //arr.length = 5
+            console.log(arr[i]);
+        }
+
+        // 5문제) 위 배열 원소의 각 제곱 값을 콘솔에 출력하세요.
+        for (let i = 0; i < arr.length; i++) {  //arr.length = 5
+            console.log(arr[i] * arr[i]);
+        }
+
+        // 6문제) '홍길동', '홍나라', '김길동', '김영희', '박영철'을 원소로 갖는 배열을 선언하세요.
+        arr = ['홍길동', '홍나라', '김길동', '김영희', '박영철'];
+
+        // 7문제) 위 배열에서 홍길동을 찾아 홍길동의 인덱스와 이름을 출력하세요.
+        for (let i = 0; i < arr.length; i++) {  // for문을 사용하여 배열의 모든 원소에 접근하여
+            if( arr[i] == '홍길동'){            // 배열에 있는 모든 원소에서 홍길동을 찾아 참이면
+                console.log("Index:", i, "Value:", arr[i]); // 홍길동의 인덱스와 이름을 출력함
+            }
+        }
+
+        // 8문제) 위 배열에서 "홍나라" 데이터를 가지는 인덱스 값을 "홍예슬"로 변경하세요
+        for (let i = 0; i < arr.length; i++){
+            if (arr[i] == '홍나라'){
+                arr[i] = '홍예슬';
+                console.log(arr[i]);
+            }
+        }
+    </script>
+</body>
+
+</html>

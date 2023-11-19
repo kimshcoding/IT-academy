@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>visibility 프로퍼티 - 강사님</title>
+
+    <script>
+        /*
+        DOM 객체의 style 프로퍼티는 태그의 인라인 css만 인식한다.
+        이때 인라인이 아닌 css 속성은 빈문자열을 갖는다.
+        */
+        function toggle() {
+            let spanArray = document.getElementsByTagName("span");
+            for(let i = 0; i < spanArray.length; i++){
+                let span = spanArray[i];
+                let visibilityValue = span.style.visibility;
+                console.log(visibilityValue);
+
+                if(visibilityValue == 'hidden' || visibilityValue == ""){
+                    span.style.visibility = "visible";
+                }else if(visibilityValue == 'visible'){
+                    span.style.visibility = "hidden";
+                }
+                span.style.color = "blue";
+            }
+        }
+
+        /*
+        visibilityValue == 'hidden' || visibilityValue == "": visibility 값이 "hidden"이거나 빈 문자열일 때 span 요소를 보이도록 설정한다.
+
+        visibilityValue == 'visible': visibility 값이 "visible"일 때 span 요소를 숨기도록 설정한다.
+        */
+    </script>
+
+    <style>
+        span {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>다음 빈 곳에 숨은 단어?
+        <button onclick="toggle()">show/hide</button>
+    </h3>
+
+    <hr>
+    <ul>
+        <li>I (<span>love</span>) you.</li>
+        <li>CSS is Cascading (<span>Style</span>) Sheet.</li>
+        <li>응답하라 (<span>1988</span>).</li>
+    </ul>
+</body>
+
+</html>

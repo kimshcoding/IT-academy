@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #t1{
+            border: 2px solid red;
+        }
+        #t1 td{
+            border: 2px solid blue;
+        }
+        #t2{
+            border-collapse: collapse;
+            border: 2px solid red;
+        }
+        #t2 td{
+            border: 2px dashed blue;
+        }
+        #t2 tr:nth-child(1) td:nth-child(1){
+            width: 80px;
+        }
+        #t2 tr:nth-child(2) td:nth-child(1){
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" id="t1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <table border="1" id="t2">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+</body>
+</html>

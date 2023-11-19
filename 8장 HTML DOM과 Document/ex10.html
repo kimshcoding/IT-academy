@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>DOM this 사용하기 - GPT</title>
+</head>
+
+<body>
+    <div id="d1">
+        <span onclick="upperSize(this, '15px', 'bold')">여기</span>를 클릭하세요.
+    </div>
+
+    <script>
+        function upperSize(dom, size, bolder) {
+            // 현재 글자 크기 가져오기
+            let currentSize = parseInt(dom.style.fontSize) || 12; // 기본값 12픽셀
+
+            // 새로운 글자 크기 계산 (현재 크기 + 5픽셀)
+            let newSize = currentSize + 5;
+
+            // 스타일 속성 설정
+            dom.style.fontSize = newSize + 'px';
+            dom.style.fontWeight = bolder;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>체크 박스 만들기</title>
+</head>
+<body>
+    <h1>체크 박스 만들기</h1>
+    <!--
+        * input 태그의 type 속성 checkbox
+        * 체크박스에서 여러 체크 박스를 하나의 그룹으로 묶기 위해서는 name 속성값이 같아야 함.
+        * submit 시 전송되는 데이터는 input 태그의 value 속성 값이 전송됨
+        * 체크박스 옆의 텍스트는 사용자를 위해 체크박스의 의미를 안내하는 역할임.
+    -->
+    <input type="checkbox"> 체크박스
+    <form method="get" action="">
+    <br>
+    취미 선택 :
+    <input type="checkbox" name="hobby" value="movie">영화감상
+    <input type="checkbox" name="hobby" value="walk">산책
+    <input type="checkbox" name="hobby" value="book">독서
+    <input type="checkbox" name="hobby" value="exiting">운동
+    <input type="checkbox" name="hobby" value="fish">낚시
+    <input type="checkbox" name="hobby" value="clean" checked> 청소
+    <br>
+    <!-- java 와 database 체크박스가 화면 로드시 이미 선택되어 있을 수 있도록 속성을 선언해 보세요.-->
+    관심사 선택:
+    <input type="checkbox" name="part" value="html">html
+    <input type="checkbox" name="part" value="java" checked>java
+    <input type="checkbox" name="part" value="css">css
+    <input type="checkbox" name="part" value="database" checked>database
+    <br>
+    <input type="submit">
+    </form>
+    <hr>
+    <h1>라디오 버튼 만들기</h1>
+    <form>
+        <input type="radio" name="r1" value="1">라디오버튼1
+        <input type="radio" name="r1" value="2">라디오버튼2
+        <input type="radio" name="r1" value="3" checked>라디오버튼3
+        <br>
+        <input type="submit">
+    </form>
+    <hr>
+    <h1>select 박스 만들기</h1>
+    <!-- 
+        select 태크는 화면에 드롭다운형 목록 입력양식을 만드는 태크
+    -->
+
+    <form>
+      <select name="sel1" size="3" multiple>
+        <option value="1">a</option>
+        <option value="2">b</option>
+        <option value="3">c</option>
+        <option value="4">d</option>
+      </select>
+      <br>
+      <input type="submit">
+    </form>
+
+    <h1>입력양식에 캡션 지정하기</h1>
+    <!--
+        label 태크를 사용하면 입력양식에 캡션을 지정할 수 있다.
+        이때 캡션을 선택하면 입력양식을 선택한 효과를 보게 된다.
+
+        사용방법
+        1. label 태그 안에 캡션 양식을 같이 두는 방법
+        2. label 태그의 for 속성과 입력양식의 id 속성 값을 매핑하는 방법
+    -->
+    <form>
+        <label>
+            텍스트1 : <input type="text" name="t1">
+        </label>
+        <div>
+           <label for="t2">텍스트2</label> 
+        </div>
+        <div>
+            <input type="text" id="t2" name="t2">
+        </div>
+        <label>
+            check1 <input type="checkbox">
+        </label>
+        
+    </form>
+
+
+
+</body>
+</html>

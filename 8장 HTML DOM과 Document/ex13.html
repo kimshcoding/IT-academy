@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>document.getElementsByTagName()</title>
+    <script>
+        // span 태그의 스타일을 변경하는 함수
+        function changefn() {
+            // 모든 span 태그를 가져와서 spanArray에 저장
+            let spanArray = document.getElementsByTagName("span");
+
+            // 가져온 span 태그들에 대해 반복
+            for (let i = 0; i < spanArray.length; i++) {
+                // 현재 순회 중인 span 요소를 span 변수에 저장
+                let span = spanArray[i];
+
+                // 스타일 변경
+                span.style.color = "orchid"; // 글자 색상을 orchid로 변경
+                span.style.fontSize = "20px"; // 글자 크기를 20px로 변경
+            }
+        }
+
+        /*
+        -document.getElementsByTagName("span"): 문서 내의 모든 <span> 태그를 선택하여 해당 태그들을 배열로 반환하는 메소드.
+        -span.style.color = "orchid": span 요소의 글자 색상을 "orchid"로 변경하는 코드.
+        -span.style.fontSize = "20px": span 요소의 글자 크기를 "20px"로 변경하는 코드.
+        */
+    </script>
+</head>
+
+<body>
+    <h3>내가 좋아하는 과일
+        <button onclick="changefn()">누르세요</button>
+    </h3>
+    <hr>
+    저는 빨간 <span>사과</span>를 좋아해서
+    아침마다 한 개씩 먹고 있어요. 운동할 때는 중간 중간에
+    <span>바나나</span>를 먹지요. 탄수화물 섭취가 빨라
+    힘이 납니다. 또한 달콤한 향기를 품은 <span>체리</span>와
+    여름 냄새 물씬 나는 <span>자두</span>를 좋아합니다.
+</body>
+
+</html>

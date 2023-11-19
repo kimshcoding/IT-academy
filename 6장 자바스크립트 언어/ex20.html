@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>논리 연산자</title>
+</head>
+
+<body>
+    <script>
+        //논리 연산자 (이항 연산자)
+        //-피연산자 전부 논리값 (true, false)을 갖는다.
+        //-논리 연산의 결과도 역시 논리값 (true, false)
+
+        //1. AND 연산자, 논리곱(&&기호를 사용한다. 그리고 라는 의미가 있다.)
+        //-피연산자 1이 참이고 피연산자 2가 참이여야지만 참인 연산자.
+        /*
+        true && true -> true
+        true && flse -> flse
+        flse && true -> flse
+        flse && flse -> flse
+        */
+
+        let val1 = true;
+        let val2 = false;
+        let val3 = true;
+
+        console.log(val1 && val2); //false  <둘다 true 일때만 true>
+        console.log(val1 && val3); //true
+
+        let a = 10;
+        let b = '10';
+        console.log((a >= 10) && (a != b)); // true && false -> false
+
+        let name = "홍길동";
+        let age = 17;
+        let gender = 'M';
+        //위 name, age, gender 데이터를 사용하여 홍길동이 성인 남성이면 true
+        //아니면 false를 출력하세요.
+        //성인 남성의 기준: age가 18보다 크다, gender가 'M'이다
+        console.log((age > 18) && (gender == 'M')); //false
+
+        name = "이길동";
+        age = 66;
+        gender = 'M'
+        //위 name, age, gender 데이터를 사용하여 이길동이 경로우대 대상자 남성이면 true
+        //아니면 false를 출력하세요.
+        //경로우대 대상자 남성의 기준: age가 65보다 크거나 같다, gender가 'M'이다.
+        console.log((age >= 65) && (gender == 'M')); //true
+
+        //2.OR 연산자/논리합(||기호 사용)
+        //-피연산자 모두 논리값을 사용 (비교연산식 가능)
+        //-피연산자 1이 참이거나 또는 피연사자 2가 참이면 참이다.
+        /*
+        true || true => true
+        true || false => true
+        false || true => true
+        false || false => false
+        */
+
+        val1 = true;
+        val2 = false;
+        val3 = true;
+        console.log(val1 || val2); //true
+        console.log(val2 || false); //false
+
+        a = 10;
+        b = '10';
+        console.log((a < 10) || (b == a)); // false || true => true
+
+        name = "김길동";
+        let mathScore = 80;
+        //김길동이 받은 수학점수가 70보다 크거나 또는 90보다 작으면 true 출력
+        //아니면 false를 출력하세요.
+        console.log((mathScore > 70) || (mathScore < 90)); //true
+
+        name = "박길동";
+        age = 5;
+        gender = 'M';
+        //박길동이 할인 대상자라면 true 아니라면 false를 출력하세요.
+        //할인 대상자는 age가 7보다 작거나 같은 경우 또는 age 65보다 크거나 같은 경우
+        console.log((age <= 7) || (age >= 65)); //true
+
+        //3.NOT 연산자 (!기호를 사용하는 단항 연산자)
+        //-피연산자는 하나를 가지며 피연산자 앞으로 붙는 연산자이다.
+        //-피연산자는 논리값을 가지며 해당 논리값이 반전되어 반환
+
+        val1 = false;
+
+        console.log(!val1); //true
+
+        name = "박길동";
+        age = 5;
+
+        //박길동이 미성년자면 true 아니면 false 출력
+
+        console.log(!(age > 7)); //!false -> true
+    </script>
+</body>
+
+</html>

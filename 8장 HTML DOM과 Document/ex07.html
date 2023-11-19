@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>8장 실습문제1 - 강사님 코드</title>
+</head>
+
+<body>
+    <h3>라면을 끓이는 순서</h3>
+    <hr>
+    <ol type="A" id="ol" onclick="changeBack()">
+        <li>물을 끓인다.</li>
+        <li>라면과 스프를 넣는다.</li>
+        <li>파를 썰어 넣는다.</li>
+        <li>5분 후 <strong>맛있게</strong> 먹는다.</li>
+    </ol>
+    <script>
+        //1-2
+        document.getElementById("ol").style.color = "green";
+
+        //or
+
+        let lis = document.getElementsByTagName("li");
+        for (let i = 0; i < lis.length; i++) {
+            lis[i].style.color = "green";
+        }
+
+        //1-3
+        function changeBack() {
+            document.getElementById("ol").style.backgroundColor = "yellowgreen";
+
+            //or
+            document.getElementsByTagName("ol")[0].style.backgroundColor = "yellowgreen";
+
+        }
+    </script>
+</body>
+
+</html>

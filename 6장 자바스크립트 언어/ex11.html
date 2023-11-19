@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>리터럴 배우기</title>
+</head>
+
+<body>
+    <script>
+        //리터럴이란 소스코드상에 작성되어 있는 데이터를 의미함.
+        //리터럴 종류
+        //1.정수형
+        console.log(10); //10, -10이 정수 리터럴을 의미함
+        console.log(-10);
+
+        console.log(015); //8진수 정수 리터럴을 의미함
+        console.log(0x15); //16진수 정수 리터럴을 의미함
+
+        //2.실수형 (소수점을 가지는 수)
+        console.log(3.14); //3.14는 소수형 리터럴
+        console.log(314E-2); //3.14에 대하 지수형 리터럴
+
+        //3.논리형
+        console.log(true); //true는 참을 의미하는 논리형 리터럴
+        console.log(false); //false는 거짓을 의미하는 논리형 리터럴
+
+        //4.문자열형 (문자열-하나 이상의 문자로 이루어진 것)
+        console.log("문자열리터럴"); //""(큰따옴표)를 사용하여 문자열 리터럴 표기
+        console.log('문자열리터럴'); //''(작은따옴표)를 사용하여 문자열 리터럴 표기
+
+        //5.기타형
+        //1)null : 값이 없음을 의미하는 리터럴
+        //2)NaN : 숫자가 아님을 의미함 (실수를 0.0으로 나누려는 경우 발생함)
+
+        //<input type="text" name="t1">
+        document.write("<input type='text' name='t1'>");
+        document.write('<input type="text" name="t1">');
+        document.write("<input type=\"text\" name=\"t1\">");
+    </script>
+    <!--input type="text" name='t1'-->
+    <hr>
+    <script>
+        /*
+        홍길동 -> 문자열 리터럴
+        20 -> 숫자 리터럴
+        true -> 논리 리터럴
+        전주 완산구 -> 문자열 리터럴
+
+        위 데이터의 리터럴을 고려하여 console에 데이터를 출력하세요.
+        */
+        console.log('홍길동');
+        console.log(20);
+        console.log(true);
+        console.log("전주 완산구");
+    </script>
+</body>
+
+</html>

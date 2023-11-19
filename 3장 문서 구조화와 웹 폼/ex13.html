@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>회원가입</title>
+</head>
+<body>
+<header>
+		<h1>회원가입</h1>
+	</header>
+	<hr>
+	<section>
+		<article>
+			<form action="#" method="post">
+				<fieldset>
+					<legend><h3>기본정보</h3></legend>
+					<table>
+						<tbody>
+							<tr>
+								<th align="right">가입일:</th>
+								<td>
+									<input type="text" value="2023-11-01" disabled>
+								</td>
+							</tr>
+							<tr>
+								<th align="right">* 아이디:</th>
+								<td>
+									<input type="text" name="id" required placeholder="아이디를 입력하세요">
+									<input type="button" value="ID중복확인">
+								</td>
+							</tr>
+							<tr>
+								<th align="right">* 이름:</th>
+								<td><input type="text" name="name" required placeholder="이름을 입력하세요"></td>
+							</tr>
+							<tr>
+								<th align="right">* 비밀번호:</th>
+								<td><input type="password" name="pass" required placeholder="비밀번호를 입력하세요"></td>
+							</tr>
+							<tr>
+								<th align="right">* 비밀번호 확인:</th>
+								<td><input type="password" name="passRe" required placeholder="비밀번호를 다시 입력하세요"></td>
+							</tr>
+							<tr>
+								<th align="right">* 이메일:</th>
+								<td><input type="email" name="email" required placeholder="이메일을 입력하세요"></td>
+							</tr>
+							<tr>
+								<th align="right">광고 수신동의:</th>
+								<td><input type="checkbox" name="adAgree" value="Y" checked>동의</td>
+							</tr>
+							<tr>
+								<th align="right">주소:</th>
+								<td><input type="text" name="addr" size="40"> 
+									<input type="button" value="주소찾기">
+								</td>
+							</tr>
+							<tr>
+								<th align="right">성별:</th>
+								<td>
+									<input type="radio" name="gender" value="m">남 
+									<input type="radio" name="gender" value="f">여
+								</td>
+							</tr>
+							<tr>
+								<th align="right">생년월일:</th>
+								<td><input type="date" name="birth"></td>
+							</tr>
+							<tr>
+								<th align="right">연락처:</th>
+								<td>
+									<select name="phone1">
+										<option>010</option>
+										<option>011</option>
+										<option>016</option>
+									</select> -
+									<input type="text" name="phone2" maxlength="4" size="4"> -
+									<input type="text" name="phone3" maxlength="4" size="4">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>
+				<fieldset>
+					<legend><h3>부가정보</h3></legend>
+					<table>
+						<tbody>
+							<tr>
+								<th align="right">관심분야 :</th>
+								<td>
+									<input type="checkbox" name="interest" value="java">java
+									<input type="checkbox" name="interest" value="html">html
+									<input type="checkbox" name="interest" value="database">database
+									<input type="checkbox" name="interest" value="jsp">jsp
+									<input type="checkbox" name="interest" value="javascript">javascript
+									<input type="checkbox" name="interest" value="css">css
+									<input type="checkbox" name="interest" value="android">android
+								</td>
+							</tr>
+							<tr>
+								<th align="right">소개글 :</th>
+								<td>
+									<textarea name="intro" rows="5" cols="60" placeholder="소개글을 입력하세요"></textarea>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</fieldset>
+				<p></p>
+				<input type="button" value="취소">
+				<input type="submit" value="회원가입">
+			</form>
+		</article>
+	</section>
+	<hr/>
+	<footer>
+		회원가입
+	</footer>
+</body>
+</html>

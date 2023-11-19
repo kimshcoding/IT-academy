@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>form 다루기</title>
+    <style>
+        input[type='text']{
+            background-color: beige;
+            font-size: 8px;
+            /*border: 3px dotted blue;*/
+            border: none;
+            border-radius: 3px;
+        }
+        input[type='text']:focus{
+            font-size: 120%;
+        }
+        input[type='email']{
+            width: 200px;
+            height: 100px;
+        }
+        input[type='email']:focus{
+            background-color: gray;
+        }
+        button{
+            color: yellow;
+            background-color: black;
+            border-radius: 8px;
+            border-style: none;
+        }
+        input[type=password]:hover{
+            background-color: pink;
+        }
+        input[type=radio]{
+            background-color: red;
+            border: 1px solid blue;
+        }
+        #r1btn span{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <form>
+    text : <input type="text" name="t1" placeholder="텍스트를 입려하세요."> <br>
+    password : <input type="password" name="p1"> <br>
+    email : <input type="email" name="e1"> <br>
+    text : <input type="text" name="t2"> <br>
+    radio : <label id="r1btn" for="r1"><span>sample</span></label>
+            <input type="radio" name="r1" style="display: none;"> 
+            
+            <br>
+
+    <button type="button">click</button>
+    </form>
+</body>
+</html>

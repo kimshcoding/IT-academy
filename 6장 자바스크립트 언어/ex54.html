@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //함수정의
+        function pr(a1, a2) {
+            let cnt = parseInt(a2); //문자열을 숫자로 변환, 현재 숫자 상태임
+            if (!isNaN(cnt)) { //isNaN(value) => value가 숫자가 아니라면 true 리턴 -> !이 있어 숫자라면 true 리턴되어 for문 실행함
+                for (let num = 1; num <= a2; num++) {
+                    document.write(a1);
+                }
+            }
+        }
+    </script>
+    <script>
+        pr('%', 5);
+        /*
+        1.함수이릅 : pr
+        2.매개변수 : 2개
+        3.반환유뮤 : X
+        4.실행문 : 첫번째 매개값을 두번째 매개값 갯수만큼 출력
+        */
+    </script>
+</body>
+
+</html>

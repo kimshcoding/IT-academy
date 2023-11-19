@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>343쪽 실습문제 1</title>
+</head>
+
+<body>
+    <h3>난수 10개 생성</h3>
+    <hr>
+    <script>
+        let n = [] //배열 n 선언 , 빈 배열
+        for (let i = 0; i < 10; i++) { //10번 ,난수 10개 발생 배열에 저장
+            n[i] = Math.floor(Math.random() * 100 + 1);
+
+            /*
+            1~10까지 난수
+            Math.random(): 0부터 실수로 0.99999999999999999999999999 범위까지
+            Math.random()*10+1 : 1부터 실수로 10.99999999999999999999999999 범위까지
+            Math.floor(Math.random()*10+1) : 1~10
+      
+            1~100까지 난수
+            Math.random()*100 : 0부터 99.9999999999999999999999999999범위
+            Math.random*100+1 : 1~100.99999999999999999999999999999범위
+            Math.floor(Math.random*100+1) : 1~100까지
+            */
+        }
+        for (let i = 0; i < n.length; i++) {
+            document.write(n[i] + " ");
+        }
+        document.write("<hr>");
+        let big = n[0]; //big은 제일 큰 수 저장
+        for (let i = 0; i < n.length; i++) {
+            //큰수 찾기
+            if (big < n[i]) {
+                big = n[i];
+            }
+        }
+        document.write("제일 큰 수는 " + big);
+        document.write("<hr>");
+
+        n.sort();
+        for (let i = 0; i < n.length; i++) {
+            document.write(n[i] + " ");
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: yellow;
+        }
+        #box1{
+            /*요소의 원래 위치에서 상대적으로 이동하며
+            이때 다른 요소의 위치 영향을 주지 않는다.*/
+            position: relative;
+            top: 10px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>1</div>
+    <div id="box1">2</div>
+    <div>3</div>
+</body>
+</html>
