@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>폼 이벤트 다루기</title>
+</head>
+
+<body>
+    <form onreset="return false;" onsubmit="vaildation();return false;">
+        <input type="text" name="t1">
+        <br>
+        <button type="reset">초기화</button>
+        <button type="submit">제출</button>
+    </form>
+    <script>
+        function vaildation() {
+            alert(1);
+        }
+    </script>
+</body>
+
+</html>

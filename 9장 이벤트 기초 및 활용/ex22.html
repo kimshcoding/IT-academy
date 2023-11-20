@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Image Change</title>
+</head>
+
+<body>
+    <img src="1.png" id="image">
+    <button onclick="changeImg('1.png')">1.png</button>
+    <button onclick="changeImg('2.png')">2.png</button>
+    <div id="width"></div>
+
+    <script>
+        function changeImg(src) {
+            let img = document.getElementById("image");
+            img.src = src;
+            img.onload = function () {
+                let width = img.width;
+                document.getElementById("width").innerHTML = "너비 :" + width;
+            }
+        }
+    </script>
+
+    <!--
+        1.png 버튼 클릭 시 id image인 요소의 이미지를 1.png로 변경 후
+        이미지 너비를 id width 요소에 출력하세요.
+
+        2.png 버튼 클릭 시 id image인 요소의 이미지를 2.png로 변경 후
+        이미지 너비를 id width 요소에 출력하세요.
+
+        자바스크립트를 사용하여 이미지 변경은 dom.src 속성을 이미지 경로로 변경
+        너비를 구하는 방법은 dom.width 속성값 반환
+    -->
+</body>
+
+</html>

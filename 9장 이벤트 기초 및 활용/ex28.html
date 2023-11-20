@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>select 양식 이벤트 다루기</title>
+    <script>
+        function alertFn(obj) {
+            console.log(obj.selectedIndex);
+            let selOpt = obj.options[obj.selectedIndex];
+            alert(selOpt.value + "/" + selOpt.text);
+        }
+    </script>
+</head>
+<body>
+    <input type="text" onchange="alert('텍스트 변경!')">
+    <br>
+    <select id="sell" onchange="alertFn(this)">
+        <option value="list01">항목1</option>
+        <option value="list02">항목2</option>
+        <option value="list03">항목3</option>
+    </select>
+    <!--
+        목록 선택항목을 바꿨을 때 바꾼 항목의 value 속성 값 메시지창 띄우기
+    -->
+</body>
+</html>

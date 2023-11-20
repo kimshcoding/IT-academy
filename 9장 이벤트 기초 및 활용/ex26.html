@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>과일 이미지 출력</title>
+    <script>
+        function loadFn() {
+            let r1s = document.getElementsByName("r1");
+            for (let i = 0; i < r1s.length; i++) {
+                r1s[i].onclick = function () {
+                    if (this.checked) {
+                        document.getElementById("rs").innerHTML
+                            = "<img src ='" + this.value + "'>";
+                        document.getElementById("image").src = this.value;
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body onload="loadFn()">
+    <h3>라디오 버큰을 클릭하면 이미지를 출력합니다.</h3>
+    <hr>
+    <input type="radio" name="r1" value="banana.png">바나나
+    <input type="radio" name="r1" value="mango.png">망고
+    <input type="radio" name="r1" value="apple.png">사과
+    <div id="rs"></div>
+
+    <img id="image">
+    </script>
+</body>
+
+</html>

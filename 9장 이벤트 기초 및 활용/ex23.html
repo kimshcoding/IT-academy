@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>onfocus와 onblur 이벤트 다루기</title>
+    <style>
+        th {
+            text-align: right;
+        }
+    </style>
+    <script>
+        function changeFocus(obj) {
+            obj.style.fontSize = "1.5em";
+            obj.style.backgroundColor = "lightgray";
+        }
+        function initFn(obj) {
+            obj.removeAttribute("style");
+        }
+        function checkId(obj) {
+            let value = obj.value; //함수가 호출 된 시점의 dom 객체 입력값
+            let parent = obj.parentElement;
+            let span = parent.nextElementSibling.getElementsByClassName("checkRs")[0];
+
+            if (value == "") {
+                span.innerHTML = "아이디는 필수입니다.";
+                span.style.color = "red";
+            } else {
+                span.innerHTML = "";
+            }
+        }
+
+        function checkPass(obj) {
+            let value = obj.value;
+            let parent = obj.parentElement;
+            let span = parent.nextElementSibling.getElementsByClassName("checkRs")[0];
+
+            if (value == "") {
+                // '비밀번호는 필수입니다' - 빨간색 텍스트
+                span.innerHTML = '비밀번호는 필수입니다';
+                span.style.color = "red";
+            } else if (value.length < 6) {
+                span.innerHTML = '비밀번호는 6자리 이상입니다.'
+                span.style.color = "orange";
+            } else {
+                span.innerHTML = '유효합니다';
+                span.style.color = "green";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <th>아이디 :</th>
+                <td>
+                    <input type="text" name="id" onfocus="changeFocus(this)" onblur="initFn(this);checkId(this);">
+                </td>
+                <td><span class="checkRs"></span></td>
+            </tr>
+            <tr>
+                <!--
+        비밀번호를 입력하지 않고 커서를 벗어 났을 경우에는
+        '비밀번호는 필수입니다' - 빨간색 텍스트
+        입력값이 5자리 이하인 경우 
+        '비밀번호는 6자리 이상입니다.'-주황색 텍스트
+        입력값이 존재하고 6자리 이상인경우
+        '유효합니다' - 초록색 텍스트
+        -->
+                <th>비밀번호 :</th>
+                <td>
+                    <input type="password" name="pass" onblur="checkPass(this)">
+                </td>
+                <td><span class="checkRs"></span></td>
+            </tr>
+            <tr>
+                <th>이름 :</th>
+                <td>
+                    <input type="text" name="name">
+                </td>
+                <td><span class="checkRs"></span></td>
+            </tr>
+            <tr>
+                <th>연락처 :</th>
+                <td>
+                    <input type="text" name="phone">
+                </td>
+                <td><span class="checkRs"></span></td>
+            </tr>
+        </table>
+
+    </form>
+</body>
+
+</html>

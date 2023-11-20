@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>radio,checkbox checked 다루기</title>
+    <script>
+        function radioFn() {
+            //선택된 라디오버튼의 value 속성값 메시지창으로 띄우기
+            let r1s = document.getElementsByName("r1");
+            for (let i = 0; i < r1s.length; i++) {
+                let isChecked = r1s[i].checked;
+                if (isChecked) {
+                    alert(r1s[i].value);
+                    break;
+                }
+            }
+        }
+
+        function cntChecked() {
+            //선택된 체크박스 갯수 메시지창으로 출력
+            let c1s = document.getElementsByName("c1");
+            let cnt = 0;
+            for (let i = 0; i < c1s.length; i++) {
+                let isChecked = c1s[i].checked;
+                if (isChecked) {
+                    cnt++;
+                }
+            }
+            alert(cnt);
+        }
+    </script>
+</head>
+
+<body>
+    <input type="radio" name="r1" value="radio1">1
+    <input type="radio" name="r1" value="radio2">2
+    <input type="radio" name="r1" value="radio3">3
+    <br>
+    <button onclick="radioFn()">체크항목찾기</button>
+
+    <br>
+    <input type="checkbox" name="c1" value="check01">1
+    <input type="checkbox" name="c1" value="check02">2
+    <input type="checkbox" name="c1" value="check03">3
+    <input type="checkbox" name="c1" value="check04">4
+    <br>
+    <button onclick="cntChecked()">체크항목갯수확인</button>
+
+    <br>
+
+    <input type="checkbox" name="c2" value="apple">사과
+    <input type="checkbox" name="c2" value="banana">바나나
+    <input type="checkbox" name="c2" value="lemon">레몬
+    <br>
+    <button onclick="checkFn()">선택한 과일 출력하기</button>
+    <div id="rs"></div>
+    <!--
+    선택한 과일 출력하기 버튼 클릭시 선택한 체크박스의 value 속성값을
+    id rs요소에 순서대로 나열하세요.
+    -->
+    <script>
+        function checkFn() {
+            document.getElementById("rs").innerHTML = "";
+            let c2s = document.getElementsByName("c2");
+            for (let i = 0; i < c2s.length; i++) {
+                if (c2s[i].checked) {
+                    document.getElementById("rs").innerHTML += c2s[i].value + " ";
+                }
+            }
+        }
+    </script>
+
+    <br>
+    <input type="checkbox" name="all" onclick="checkAllFn(this)">전체선택
+    <br>
+    <input type="checkbox" name="list" value="001">1
+    <input type="checkbox" name="list" value="002">2
+    <input type="checkbox" name="list" value="003">3
+    <script>
+        function checkAllFn(obj) {
+            let isChecked = obj.checked;
+            if (isChecked) {
+                let lists = document.getElementsByName("list");
+                for (let i = 0; i < lists.length; i++) {
+                    lists[i].checked = true;
+                }
+            } else {
+                let lists = document.getElementsByName("list");
+                for (let i = 0; i < lists.length; i++) {
+                    lists[i].checked = false;
+                }
+            }
+        }
+
+        let listArr = document.getElementsByName("list");
+        for (let i = 0; i < listArr.length; i++) {
+            listArr[i].onclick = function () {
+                let cntList = 0;
+                for (let j = 0; j < listArr.length; j++) {
+                    if (listArr[j].checked) {
+                        cntList++;
+                    }
+                }
+
+                if (cntList < 3) {
+                    document.getElementsByName("all")[0].checked = false;
+                } else {
+                    document.getElementsByName("all")[0].checked = true;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

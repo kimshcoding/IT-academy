@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>onload 이벤트 다루기</title>
+    <script>
+        function loadFn(){
+            document.getElementById("ptag").style.backgroundColor='yellow';
+        }
+
+        window.onload = function(){   //body의 onload 시점과 동일하다.
+            alert('본문 로딩됨!');
+        }
+    </script>
+</head>
+<body onload="loadFn()">
+    <p id="ptag">p태크 입니다.</p>
+    <!--
+        자바스크립트를 사용하여 id가 ptag인 요소를 찾아 배경을 노란색으로 변경하세요.
+    -->
+    
+</body>
+</html>

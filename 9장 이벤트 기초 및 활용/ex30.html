@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>키보드 이벤트 다루기</title>
+</head>
+
+<body>
+    <input type="text" onkeydown="" onkeyup="this.value= this.value.replaceAll(/[^0-9]/g,'')">
+
+    <br>
+    <input type="text" id="onlyNumber" onkeydown="return checkNumber(this,event)">
+    <input type="text" id="onlyNumber" onkeydown="return true">
+    <input type="text" id="onlyNumber" onkeydown="return false">
+
+    <!--
+    위 id onlyNumber 양식에서 키보드를 누를때 숫자만 입력되고
+    다른 문자는 입력되지 않게 구현하세요.
+
+    -->
+    <script>
+        function checkNumber(obj, e) {
+            console.log(e.keyCode);
+            //digit 0:48 9:57
+            //numberpad 0:96 9:105
+            if (e.keyCode >= 48 && e.keyCode <= 57 || e.keyCode >= 96 && e.keyCode <= 105) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
