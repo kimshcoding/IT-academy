@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>제이쿼리 attr 메소드 다루기</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        function changeFn() {
+            //텍스트는 패스워드로 패스워드는 텍스트
+            $("input").each(function () {
+                let currentType = $(this).attr("type");
+                console.log(currentType);
+                if (currentType == "text") {
+                    $(this).attr("type", "password");
+                } else if (currentType == "password") {
+                    $(this).attr("type", "text");
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text"><br>
+    <input type="password"><br>
+    <button onclick="changeFn()">change</button>
+    <hr>
+    <input type="email" id="email"><br>
+    <button onclick="changeSize()">크기 변경</button> <!--입력양식 길이 50글자크기로 변경-->
+    <button onclick="readOnlyFn()">읽기전용</button> <!--입력양식을 읽기 전용으로 변경-->
+    <button onclick="maxLengthFn()">길이제한</button> <!--입력양식의 입력길이를 10글자로 제한-->
+    <br>
+    <button onclick="initSize()">크기원상복구</button>
+    <button onclick="initReadOnly()">읽기전용해제</button>
+    <button onclick="initLimitLength()">길이제한해제</button>
+    <script>
+        function initReadOnly() {
+            $("input[type=email]").removeAttr("readonly");
+        }
+        function initSize() {
+            $("input[type=email]").removeAttr("size");
+        }
+        function initLimitLength() {
+            $("input[type=email]").removeAttr("maxlength");
+        }
+
+        function changeSize() {
+            $("input[type=email]").attr("size", 50);
+        }
+        function readOnlyFn() {
+            $("input[type=email]").attr("readonly", true);
+        }
+        function maxLengthFn() {
+            $("input[type=email]").attr("maxlength", 10);
+        }
+    </script>
+</body>
+
+</html>

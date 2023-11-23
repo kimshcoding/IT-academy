@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>제이쿼리 이벤트 실습문제02</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $("tr").click(function () {
+                $("tr").css("backgroundColor", "white");
+
+                let s1 = $(this).children("td:eq(0)").text();
+                let s2 = $(this).children("td:eq(1)").text();
+                let s3 = $(this).children("td:eq(2)").text();
+                let s4 = $(this).children("td:eq(3)").text();
+
+                $("#s1").html(s1);
+                $("#s2").html(s2);
+                $("#s3").html(s3);
+                $("#s4").html(s4);
+                $(this).css("backgroundColor", "red")
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>조회수</th>
+            <th>작성일자</th>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>3번제목</td>
+            <td>0</td>
+            <td>11-07-13</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2번제목</td>
+            <td>0</td>
+            <td>11-07-12</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1번제목</td>
+            <td>0</td>
+            <td>11-07-11</td>
+        </tr>
+    </table>
+    선택된 행 :
+    <span id="s1"></span> /
+    <span id="s2"></span> /
+    <span id="s3"></span> /
+    <span id="s4"></span>
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>클래스 선택자 다루기</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $(".d1.here.box").css("background", "yellow").css("width", "200px").css("height", "200px");
+        });
+    </script>
+</head>
+
+<body>
+    <div class="d1">div태그 클래스 d1</div>
+    <div class="d1 here">div태그 클래스 d1</div>
+    <div class="d1 here box">div태그 클래스 d1</div>
+
+    <!--
+        제이쿼리를 사용하여 클래스 d1, here, box를 모두 가지고 있는 요소에게만
+        배경 노란색, 너비 200px, 높이 200px로 변경하세요!
+        $(선택자).css("background","yellow").css("width","200px").css("height","200px")
+    -->
+
+
+    <div id="d2">
+        <p class="sample">
+            d2의 자식 p 태그 입니다
+        </p>
+        <div>
+            <h3 class="sample">d2의 후손 h3입니다.</h3>
+        </div>
+        <p>
+            d2의 자식 p태그입니다.
+        </p>
+    </div>
+    <!--
+        제이쿼리를 사용하여 아이디가 d2인 요소의 자손 중 클래스
+        sample 인 요소들을 찾아 텍스트 색상을 파란색으로 변경하라
+    -->
+    <script>
+        $(function () {
+            $("#d2 .sample").css("color", "blue");
+        });
+    </script>
+
+
+    <input type="text" class="input"><br>
+    <input type="text"><br>
+    <input type="password" class="input"><br>
+    <!--
+        클래스가 input인 요소 중에서 타입이 password인 요소의
+        배경을 노란색으로 변경하세요!
+    -->
+    <script>
+        $(".input[type=password]").css("background", "yellow");
+    </script>
+
+    <hr>
+    <input type="text" class="input2"><br>
+    <input type="password" class="input2"><br>
+    <input type="checkbox" class="input2" value="checkbox01"><br>
+    <input type="radio" class="input2" value="radio01"><br>
+    <input type="button" class="input2" value="brn1"><br>
+    <input type="submit" class="input2"><br>
+    <input type="reset" class="input2"><br>
+    <button class="input2">btn2</button><br>
+
+    <script>
+        //클래스가 input2인 요소 중 text 요소 찾기
+        $(".input2:text").css("background", "yellow");
+        $(".input2:password").css("background", "yellowgreen");
+        let checkVal = $(".input2:checkbox").val(); //checkbox의 형태는 변경 불가능
+        alert(checkVal);
+        /*
+        클래스가 input2인 요소 중 type이 button이 요소의 배경 하늘색
+        클래스가 input2인 요소 중 type이 reset 요소의 배경 주황색
+        클래스가 input2인 요소 중 type이 submit 요소의 배경 브라운색
+
+        */
+        $(".input2:button").css("background", "skyblue");
+        $(".input2:reset").css("background", "orange");
+        $(".input2:submit").css("background", "brown");
+        /*
+        이전 제이쿼리 버젼에서는 타입 필터 선택자를 사용하는 경우
+        input 태그를 기준으로 타입 속성을 비교하여 검색하고
+        button 태크의 경우 검색이 되지 않았으나
+        현재 button 태그 같은 경우는 type생략시 부모의 여부에 따라서
+        type이 button 또는 submit으로 특정되기 때문에
+        제이쿼리 필터 선택자로 검색 시 button으로도 submit으로도
+        검색이 되어진다.
+        */
+    </script>
+
+    <hr>
+    <input type="radio" class="input3" name="r1" value="1">1
+    <input type="radio" class="input3" name="r1" value="2">2
+    <input type="radio" class="input3" name="r1" value="3">3
+    <input type="radio" class="input3" name="r1" value="4">4
+    <br>
+    <button onclick="findChecked()">click</button>
+    <!--
+        위 click 버튼 클릭 시 input3 라디오 버튼들 중 선택된 라디오 버튼의
+        value 속성 값을 alert으로 띄우세요.
+    -->
+    <script>
+        /*function findChecked(){
+            let radios = document.getElementsByName("r1");
+            for(let i = 0; i < radios.length; i ++){
+                if(radios[i].checked){
+                    alert(radios[i].value);
+                    break;
+                }
+            }
+        }*/
+
+        function findChecked() {
+            alert($("input[name=r1]:checked").val());
+        }
+    </script>
+
+
+    <br>
+    <hr>
+    <select id="sel" onchange="selOptFn(this)">
+        <option value="1">항목1</option>
+        <option value="2">항목2</option>
+        <option value="3">항목3</option>
+        <option value="4">항목4</option>
+    </select>
+    <!--
+        위 select 요소에서 항목 선택을 변경했을 때 변경된 옵션태그의
+        value 속성 값을 alert으로 띄우세요
+    -->
+    <script>
+        function selOptFn(obj) {
+            let val = $("#sel > option:selected").val();
+            alert(val);
+        }
+    </script>
+    <br>
+    <hr>
+    <table border="1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+    <script>
+        //odd필터는 셀렉터로 검색된 요소들의 집합에서 인텍스 홀수 요소들을 걸러낸다.
+        $("td:odd").css("color", "red");
+    </script>
+
+    <hr>
+    <div class="d3">ABC</div>
+    <div class="d3">Apple</div>
+    <div class="d3">Banana</div>
+    <div class="d3">BCD</div>
+    <script>
+        $(".d3:contains(A)").css("color", "red");
+        $(".d3:eq(3)").css("color", "green");   
+    </script>
+</body>
+
+</html>

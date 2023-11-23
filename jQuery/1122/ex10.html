@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery hover()</title>
+    <style>
+        .reverse {
+            background-color: black;
+            color: white;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: yellow;
+        }
+    </style>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            /*
+              제이쿼리에서 이벤트 등록 시 이벤트 객체 사용은
+              이벤트 메소드로 넘기는 이벤트리스너함수의 첫번째 매개변수로
+              받아서 사용한다. 이때, 이벤트 객체는 자바스크립트 객체이므로
+              사용방법은 자바스크립트와 동일하다.
+            */
+            $("h1").hover(function (e) {
+                //enter 발생 시 
+                alert(e.target);
+                $(this).addClass("reverse");
+            }, function () {
+                $(this).removeClass("reverse");
+            })
+        })
+
+        function toggleBox() {
+            $("#box").toggle('slow');
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Header-0</h1>
+    <h1>Header-1</h1>
+    <h1>Header-2</h1>
+    <button onclick="toggleBox()">click!!</button>
+    <div id="box"></div>
+    <button class="btn1">btn1</button>
+    <button class="btn1">btn2</button>
+    <button class="btn1">btn3</button>
+    <!--
+    제이쿼리를 사용하여 클래스 btn1인 요소들을 클릭하면
+    alert('클릭!!')이라는 실행문을 실행하도록 구현
+  -->
+    <script>
+        /*
+        let btn1s = document.getElementsByClassName("btn1");
+        for(let i=0; i<btn1s.length;i++){
+          btn1s[i].onclick = function(){
+            alert('클릭!!');
+          }
+        }
+        */
+        $(".btn1").click(function () {
+            alert('클릭!!');
+        });
+
+    </script>
+    <button onclick="addClickBox()">add</button>
+    <div id="parent">
+        <div class="clickBox" style="width: 100px;height: 100px; border:1px solid black;"></div>
+    </div>
+    <script>
+        /*
+        document.getElementById("clickBox")
+                .addEventListener("click",function(){
+                  this.style.backgroundColor = "yellow";
+                })
+                */
+
+        /*
+            bind 메소드는 페이지 로드 후 동적으로 추가되는 요소에는
+            이벤트가 등록 되지 않는다.
+        
+        $(".clickBox").bind("click",function(){
+          $(this).css("backgroundColor","yellow");
+        });
+        */
+        /*
+         on 메소드를 사용하면 bind 메소드의 문제점을 해결할 수 있다.
+        */
+        $(document).on("click", ".clickBox", function () {
+            $(this).css("backgroundColor", "yellow");
+        });
+
+        function addClickBox() {
+            let ele = '<div class="clickBox" style="width: 100px;height: 100px; border:1px solid black;"></div>';
+            $("#parent").append(ele);
+        }
+    </script>
+</body>
+
+</html>

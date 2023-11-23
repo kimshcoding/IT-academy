@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>제이쿼리 필터 실습문제01</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        function checkBtn() {
+            let checkboxs = $("input:checkbox");
+
+            if (checkboxs.eq(0).is(":checked")) {  // is()를 사용할 때 생성자가 단일 요소이어야 한다.
+                console.log(checkboxs.eq(0).val() + "번");
+            }
+            if (checkboxs.eq(1).is(":checked")) {
+                console.log(checkboxs.eq(1).val() + "번");
+            }
+            if (checkboxs.eq(2).is(":checked")) {
+                console.log(checkboxs.eq(2).val() + "번");
+            }
+            if (checkboxs.eq(3).is(":checked")) {
+                console.log(checkboxs.eq(3).val() + "번");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="checkbox" name="check" value="1"> 1번
+    <input type="checkbox" name="check" value="2"> 2번
+    <input type="checkbox" name="check" value="3"> 3번
+    <input type="checkbox" name="check" value="4"> 4번
+    <br>
+    <button onclick="checkBtn()">체크 버튼 확인</button>
+</body>
+
+</html>

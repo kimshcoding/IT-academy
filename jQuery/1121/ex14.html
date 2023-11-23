@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>제이쿼리 필터 실습02</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        function selectBtn() {
+            //console.log($("option:selected").val()+"번");
+
+            let options = $("option");
+
+            if (options.eq(0).is(":selected")) {   // Object.is(x, y); => x와 y의 타입 비교하여 다르면 false
+                console.log(options.eq(0).val() + "번");
+            } else if (options.eq(1).is(":selected")) {
+                console.log(options.eq(1).val() + "번");
+            } else if (options.eq(2).is(":selected")) {
+                console.log(options.eq(2).val() + "번");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <select>
+        <option value="1" selected>1번</option>
+        <option value="2">2번</option>
+        <option value="3">3번</option>
+    </select>
+    <br>
+    <button onclick="selectBtn()">Select 버튼 확인</button>
+</body>
+
+</html>

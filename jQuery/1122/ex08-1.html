@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>메소드 실습문제01</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        function add() {
+            let title = $("input[name=title]").val();
+            let content = $("input[name=content]").val();
+            let owner = $("input[name=owner]").val();
+
+            let html = "";
+            html += "<tr>";
+            html += "<td>" + title + "</td>";
+            html += "<td>" + content + "</td>";
+            html += "<td>" + owner + "</td>";
+            html += "</tr>";
+
+            // $("tbody").append(html);
+            $("table").append(html);
+
+            $("input[name=title]").val('');
+            $("input[name=content]").val('');
+            $("input[name=owner]").val('');
+        }
+    </script>
+</head>
+
+<body>
+    제목 : <input type="text" name="title"><br>
+    내용 : <input type="text" name="content"><br>
+    작성자 : <input type="text" name="owner"><br>
+    <button onclick="add()">테이블에 추가</button>
+    <table border="1">
+        <tr>
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성자</th>
+        </tr>
+    </table>
+</body>
+
+</html>

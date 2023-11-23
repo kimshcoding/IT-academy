@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>제이쿼리 css 메소드 다루기</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+<script>
+    $(function(){
+        alert($("div").css("backgroundColor"));
+        $("div").css("backgroundColor", "green");
+
+    })
+</script>
+<style>
+    div{
+        background-color: yellow;
+    }
+</style>
+</head>
+
+<body>
+    <div>div01</div>
+</body>
+
+</html>

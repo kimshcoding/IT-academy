@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>jQuery를 사용한 배열 관리 (1)</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var array = [
+                {name : 'A', link : "http://www.naver.com"},
+                {name : 'B', link : "http://www.google.com"},
+                {name : 'C', link : "http://www.w3c.com"},
+                {name : 'D', link : "http://www.daum.net"}
+
+            ];
+            $.each(array, function(index, item){
+                var output = "";
+                output += "<a href=" + item.link + ">";
+                ontput += "<h1>" + item.name + "</h1>";
+                output += "</a>";
+                
+                document.body.innerHTML += output;
+            });
+        });
+    </script>
+</head>
+
+<body>
+    
+</body>
+
+</html>

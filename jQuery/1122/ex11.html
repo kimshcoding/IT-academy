@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>제이쿼리 이벤트 실습문제01</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        // jQuery 문서가 로드된 후 실행되는 함수
+        $(function () {
+            // select 요소의 change 이벤트에 함수를 연결
+            $("select[name=number]").change(function () {
+                console.log(11);
+                // 현재 선택된 option 요소의 값을 가져옴
+                let val = $(this).children("option:selected").val();
+                // 가져온 값이 비어있지 않으면 span의 내용을 업데이트
+                if (val != "") {
+                    // span 요소의 내용을 설정
+                    $("#selNum").html(val + "번");
+                } else {
+                    // 비어있는 경우 span의 내용을 지움
+                    $("#selNum").html("");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 선택 옵션을 가진 select 요소 -->
+    <select name="number">
+        <option value="">==선택==</option>
+        <option value="1">1번</option>
+        <option value="2">2번</option>
+        <option value="3">3번</option>
+        <option value="4">4번</option>
+    </select>
+    <!-- 선택된 번호를 표시할 span 요소 -->
+    <span id="selNum"></span>
+</body>
+
+</html>

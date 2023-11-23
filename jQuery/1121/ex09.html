@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>filter 메소드 사용하기</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            //홀수 인덱스가 노랑 -> 화면에 보일 때 짝수로 보이는 것들이 노랑
+            //짝수 인덱스가 주황 -> 화면에 보일 때 홀수로 보이는 것들이 주황
+            /*
+            제이쿼리 filter 메소드
+
+            - 셀렉터로 검색된 제이쿼리 요소집합에서 필터링된
+            새로운 집합을 만들어 낼 때 사용함.
+            - 셀럭터로 검색된 요소들을 재사용하는 경우 filter를 사용하면 성능을 높일 수 있다.
+            - 셀렉터.filter(셀렉터2) : 셀렉터1에서 셀렉터2와 일치하는 요소들의 집합
+            */
+            let h3s = $("h3");
+            console.log(h3s);
+            h3s.filter(":odd").css("backgroundColor", "yellow");
+            h3s.filter(":even").css("backgroundColor", "orange");
+
+
+            let divs = $("div");
+            divs.filter(".red").css("backgroundColor", "red");
+            divs.filter(".blue").css("backgroundColor", "blue");
+        });
+    </script>
+</head>
+
+<body>
+    <h3>Header-0</h3>
+    <h3>Header-1</h3>
+    <h3>Header-2</h3>
+    <h3>Header-3</h3>
+    <h3>Header-4</h3>
+    <h3>Header-5</h3>
+    <!--
+        제이쿼리를 사용하여 h3들 중 올 수 있는 인덱스는 배경이 노란색으로
+        짝수 인덱스는 배경 주황색
+    -->
+
+    <div class="red">red</div>
+    <div class="blue">blue</div>
+    <div class="red">red</div>
+    <div class="red">red</div>
+    <div class="blue">blue</div>
+    <div class="red">red</div>
+    <div class="blue">blue</div>
+    <!--
+        제이쿼리의 filter 메소드를 사용하여 클래스가 red인 요소는 배경이 빨간색
+        클래스가 blue인 요소는 배경이 파란색으로 변경하세요.
+    -->
+
+    <input type="checkbox" value="1" onclick="clickFn(this)">1
+    <div id="rs"></div>
+
+    <script>
+        function clickFn(obj) {
+            // 일반 JavaScript 사용
+            /*
+            if (obj.checked) {
+                document.getElementById("rs").innerHTML = "체크됨";
+            } else {
+                document.getElementById("rs").innerHTML = "체크 해제됨";
+            }
+            */
+
+            // jQuery 사용
+            let jObj = $(obj);
+            if (jObj.is(":checked")) {
+                $("#rs").html("체크됨");
+            } else {
+                $("#rs").html("체크 해제됨");
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

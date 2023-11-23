@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <title>제이쿼리 even 실습문제 01</title>
+    <script>
+        $(function () {
+            // select 요소의 변경 이벤트를 감지하고 처리
+            $("select[name='number']").change(function () { //change 는 요소의 값이 변경되었을 때 발생합니다(<input>, <textarea> 및 <select> 요소에서만 작동).
+                // 선택된 값 가져오기
+                var selectedValue = $(this).val();
+                // span에 출력
+                if (selectedValue != "") {
+                    $("#selNum").text(selectedValue + "번");
+                } else {
+                    $("#selNum").text("");
+                }
+
+
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <select name="number">
+        <option value="">== 선택 ==</option>
+        <option value="1">1번</option>
+        <option value="2">2번</option>
+        <option value="3">3번</option>
+        <option value="4">4번</option>
+    </select>
+    <span id="selNum"></span>
+</body>
+
+</html>

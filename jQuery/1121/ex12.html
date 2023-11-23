@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>제이쿼리 필터 실습문제 02 - GPT</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        function selectBtn() {
+            // 체크된 셀렉트 필터링
+            let checkedSelect = $("option").filter(":checked");
+
+            // 체크된 셀렉트 값을 출력
+            checkedSelect.each(function () {
+                console.log($(this).val()+"번");
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <select>
+        <option value="1" selected="selected">1번</option>
+        <option value="2">2번</option>
+        <option value="3">3번</option>
+    </select>
+    <br />
+    <input type="button" value="Select 버튼 확인" onclick="selectBtn()" />
+</body>
+
+</html>

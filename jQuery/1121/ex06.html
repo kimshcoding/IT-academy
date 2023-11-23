@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>제이쿼리 선택자 예제1</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        $(function () {
+            $("h1").css("color", "red");
+            $("#text").css("color", "orange");
+            $("h1[name=text]").css("color", "yellow");
+            $(".text").css("color", "green");
+        })
+    </script>
+</head>
+
+<body>
+    <h1>text1</h1>
+    <h1 id="text">text2</h1>
+    <h1 name="text">text3</h1>
+    <h1 class="text">text4</h1>
+</body>
+
+</html>

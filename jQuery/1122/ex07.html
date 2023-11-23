@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>제이쿼리를 사용하여 요소 추가 삽입하기</title>
+    <style>
+        .box {
+            background-color: aliceblue;
+            border: 1px solid black;
+            height: 100px;
+        }
+    </style>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        function divMoveFn() {
+            /*
+            셀렉터1.append(셀렉터2)
+
+            셀렉터1의 마지막 자식으로 셀렉터2을 삽입해라
+            주의!!
+            만약 셀렉터2가 실제 dom tree에 존재하는 요소라면 위치가 바뀐다.
+            */
+            let here01 = $("#here01");
+            $("#result").prepend(here01);
+        }
+        function copyFn() {
+            /*
+            문자열로 html요소를 append하게 되면 새로운 요소로 인식하여
+            셀렉터1의 마지막 자식으로 추가한다.
+            */
+            let newElement = $("#ta").val();
+
+            $("#result").append(newElement);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div id="here01">이 요소를 이동시킵니다.</div>
+        <textarea id="ta"></textarea>
+    </div>
+    <button onclick="divMoveFn()">move!!</button>
+    <button onclick="copyFn()">copy!!</button>
+    <div id="result" class="box">
+
+    </div>
+
+    <button onclick="upFn()">위로</button>
+    <button onclick="downFn()">아래로</button>
+
+    <p>1</p>
+    <p>2</p>
+    <p id="p">기준!</p>
+    <p>3</p>
+    <p>4</p>
+
+    <script>
+        function upFn() {
+            let newEle = "<h3>위로 추가!</h3>";
+            $("#p").before(newEle);
+        }
+        function downFn() {
+            let newEle = "<h3>아래로 추가!</h3>";
+            $("#p").after(newEle);
+        }
+    </script>
+
+    <div>1<button onclick="moveUp(this)">위로</button><button onclick="moveDown(this)">아래로</button></div>
+    <div>2<button onclick="moveUp(this)">위로</button><button onclick="moveDown(this)">아래로</button></div>
+    <div>3<button onclick="moveUp(this)">위로</button><button onclick="moveDown(this)">아래로</button></div>
+    <div>4<button onclick="moveUp(this)">위로</button><button onclick="moveDown(this)">아래로</button></div>
+    <div>5<button onclick="moveUp(this)">위로</button><button onclick="moveDown(this)">아래로</button></div>
+    <script>
+        function moveUp(obj) {  // 위로 이동하는 함수
+            let target = $(obj).parent();  // 현재 div 요소 선택
+            let upEle = target.prev("div");  // 선택한 div의 이전 형제 div
+            upEle.before(target);  // 선택한 div를 이전 형제 div 앞에 추가하여 위로 이동
+        }
+        function moveDown(obj) {  // 아래로 이동하는 함수
+            let target = $(obj).parent();   // 현재 div 요소 선택
+            let downEle = target.next("div");   // 선택한 div의 다음 형제 div
+            downEle.after(target);    // 선택한 div를 다음 형제 div 뒤에 추가하여 아래로 이동
+        }
+    </script>
+</body>
+
+</html>

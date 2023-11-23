@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>제이쿼리 메소드 실습문제02</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        function addFn() {
+            $("div").append('<input type="file">');
+        }
+        function removeFn() {
+            $("input:file:last").remove();
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="file">
+        <button onclick="addFn()">추가</button>
+        <button onclick="removeFn()">삭제</button>
+    </div>
+</body>
+
+</html>

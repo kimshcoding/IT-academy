@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>제이쿼리 필터 실습문제 01 - GPT</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        function checkBtn() {
+            // 체크된 체크박스 필터링
+            let checkedCheckboxes = $("input[name='check']").filter(":checked");
+
+            // 체크된 체크박스의 값을 출력
+            checkedCheckboxes.each(function () {
+                console.log($(this).val()+"번");
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <input type="checkbox" name="check" value="1" /> 1번
+    <input type="checkbox" name="check" value="2" /> 2번
+    <input type="checkbox" name="check" value="3" /> 3번
+    <input type="checkbox" name="check" value="4" /> 4번
+    <br />
+    <input type="button" value="체크 버튼 확인" onclick="checkBtn()" />
+</body>
+
+</html>

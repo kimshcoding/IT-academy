@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>제이쿼리 요소 제거 메소드 다루기</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <style>
+        .box {
+            width: 150px;
+            height: 150px;
+            background-color: yellow;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        .child {
+            width: 80px;
+            height: 80px;
+            background-color: green;
+        }
+    </style>
+    <script>
+        function removeBox() {
+            /*
+            remove 메소드 사용시 셀렉터로 검색된 요소를 제거한다.
+            이때 여러 돔객체를 한 번 제거할 수 있지만
+            제거는 실제 dom tree에서 사라지는 것이므로 되도록
+            단일 객체에서 사용하도록 권장한다.
+            */
+            $(".box:first").remove();
+        }
+        function emptyFn() {
+            //$(".box").empty();
+            $(".box").html("");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box">
+        <div class="child"></div>
+    </div>
+    <button onclick="removeBox()">remove</button>
+    <button onclick="emptyFn()">empty</button>
+
+    <hr>
+    <table border="1">
+        <tr>
+            <td>1</td>
+            <td><button onclick="t1(this)">삭제</button></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><button onclick="t1(this)">삭제</button></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><button onclick="t1(this)">삭제</button></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><button onclick="t1(this)">삭제</button></td>
+        </tr>
+    </table>
+    <script>
+        function t1(x) {
+            /*
+            parentElement => parent()
+            nextSiblingElement => next()
+            previousSiblingElement => prev()
+            children요소검색 => children([선택자])
+            후손 요소 => find([선택자])
+            */
+            $(x).parent().parent().remove();  //this(button)을 기준으로 부모의 부모(tr)를 선택하여 삭제함!
+        }
+    </script>
+</body>
+
+</html>
