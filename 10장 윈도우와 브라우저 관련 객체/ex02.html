@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>팝업 호출하기</title>
+    <script>
+        function openPopup(){
+            window.open("ex01.html", "popup01", "left= 50, top=300, width=500, height=300");
+            window.open("ex01.html", "popup02", "left= 150, top=300, width=500, height=300");
+            window.open("ex01.html", "popup03", "left= 250, top=300, width=500, height=300");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="openPopup()">click!!</button>
+    <p>
+        위 버튼을 클릭하면 팝업이 열립니다.
+    </p>
+</body>
+</html>
